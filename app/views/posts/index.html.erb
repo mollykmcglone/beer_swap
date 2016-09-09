@@ -5,7 +5,7 @@
     <li>
       <h3><%= link_to post.title, post_path(post) %></h3>
       <h4>Posted <%= time_ago_in_words(post.created_at) %> ago in <%= post.category.name %> (<%= post.comments.length %> comments)</h4>
-      <p><%= post.content %><p>
+      <p><%= post.content %><p><hr>
     </li>
   <% end %>
 </ul>
