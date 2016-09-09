@@ -13,18 +13,18 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.category_id = 1
+    @post.category_id = params[:post][:category_id].to_i
     if @post.save
       flash[:notice] = "Post successfully created!"
       redirect_to posts_path
     else
-      flash[:alert] = "Oops, there were errors, please try again:"
+      flash[:alert] = "Oops, something went wrong!"
       render :new
     end
   end
 
 private
   def post_params
-    params.require(:post).permit(:title, :author, :content)
+    params.require(:post).permit(:title, :author, :content, :category_id)
   end
 end
