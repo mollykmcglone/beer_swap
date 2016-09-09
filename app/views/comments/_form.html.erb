@@ -1,0 +1,16 @@
+<div class="col-xs-8">
+  <%= form_for [@post, @comment] do |f| %>
+  <div class="form-group">
+    <%= f.label :author %>:
+    <%= f.text_field :author, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content %>:
+    <%= f.text_area :content,  size: "50x6", :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.hidden_field :post_id, :value => @post.id %>
+  </div>
+  <%= f.submit 'Submit', :class => "btn btn-primary"%>
+  <% end %>
+</div>
