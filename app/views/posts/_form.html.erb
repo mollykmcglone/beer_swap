@@ -1,0 +1,13 @@
+<%= render 'layouts/errors', :object => @post %>
+
+<div class="col-xs-6">
+  <%= form_for @post do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, :class => "form-control" %>
+  <%= f.label :author %>
+  <%= f.text_field :author, :class => "form-control" %>
+  <%= f.label :content %>
+  <%= f.text_area :content,  size: "25x6", :class => "form-control" %>
+  <%= f.submit 'Submit', :class => "btn btn-primary"%>
+  <% end %>
+</div>

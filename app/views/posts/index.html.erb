@@ -1,0 +1,13 @@
+<h1>Beer Swap Blog</h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <h3><%= link_to post.title, post_path(post) %></h3>
+      <h4>Posted <%= time_ago_in_words(post.created_at) %> ago in <%= post.category.name %> (<%= post.comments.length %> comments)</h4>
+      <p><%= post.content %><p>
+    </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Create a New Post", new_post_path %></p>

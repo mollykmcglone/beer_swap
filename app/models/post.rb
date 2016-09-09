@@ -3,4 +3,5 @@ class Post < ActiveRecord::Base
   belongs_to :category
   validates :title, :author, :presence => true
 
+  default_scope {order('created_at DESC')}
 end
