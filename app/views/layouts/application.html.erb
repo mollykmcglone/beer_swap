@@ -6,10 +6,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:bold' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6">
@@ -28,14 +30,19 @@
         </div><!-- /.navbar-collapse -->
       </div>
     </nav>
-    <div class="container">
-      <div class="flash_alert">
-        <%= flash[:alert] %>
-      </div>
-      <div class="flash_notice">
-        <%= flash[:notice] %>
+      <div class="container">
+        <div class="flash_alert">
+          <h2><%= flash[:alert] %></h2>
+        </div>
+        <div class="flash_notice">
+            <h2><%= flash[:notice] %></h2>
+        </div>
       </div>
       <%= yield %>
-    </div>
+      <footer class="footer">
+        <div class="text-muted">
+          <br><p>&copy; 2016 Molly McGlone</p>
+        </div>
+      </footer>
   </body>
 </html>
