@@ -1,6 +1,6 @@
 # Beer Swap
 
-#### A web app to help people swap beer they have too much of.
+#### A web app to help people share beer. Designed for homebrewers and beer lovers who regularly make or buy large quantities of beer and want to share/swap bottles and/or growlers with each other.
 
 #### By Molly McGlone, September 2016
 
