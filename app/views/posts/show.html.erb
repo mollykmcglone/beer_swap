@@ -28,11 +28,12 @@
   </div>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-1">
-    <%= link_to 'Add a Comment', new_post_comment_path(@post), :class => "btn btn-primary" %><hr>
+      <%= link_to 'Add a Comment', new_post_comment_path(@post), :class => "btn btn-primary" %><hr>
 
-    <%= link_to 'Edit Post', edit_post_path(@post) %><br>
-    <%= link_to 'Delete Post', post_path(@post), :data => {:confirm => "Are you sure?", :method => "delete"} %><br>
+      <%= link_to 'Edit Post', edit_post_path(@post) %><br>
+      <%= link_to 'Delete Post', post_path(@post), :data => {:confirm => "Are you sure?", :method => "delete"} %><br>
 
-    <%= link_to "Return to blog", posts_path %>
+      <%= link_to "Return to blog", posts_path %>
+    </div>
   </div>
 </div>
