@@ -19,8 +19,10 @@ Project Objectives:
 
 ## Installation
 
-* `git clone https://github.com/mollykmcglone/beer_swap.git`
 * `gem install rails`
+* `git clone https://github.com/mollykmcglone/beer_swap.git`
+* `postgres`
+* `cd beer_swap`
 * `bundle install`
 * `rake db:create`
 * `rake db:migrate`
