@@ -24,8 +24,7 @@ Project Objectives:
 * `postgres`
 * `cd beer_swap`
 * `bundle install`
-* `rake db:create`
-* `rake db:migrate`
+* `rake db:setup`
 * `rake db:test:prepare`
 
 ## Running / Development
