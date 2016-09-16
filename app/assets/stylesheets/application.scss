@@ -39,7 +39,11 @@
 }
 
 .push-space {
-  height: 400px;
+  height: 250px;
+}
+
+.test {
+  max-width: 750px;
 }
 
 .jumbotron-text {
@@ -48,10 +52,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.jumbotron h1 {
-  font-size: 5em;
+  font-size: 4em;
   line-height: 1em;
 }
 
@@ -114,4 +115,8 @@ body {
 .navbar {
   height: 60px;
   padding: 5px;
+}
+
+.push-down {
+  margin-top: 5px;
 }

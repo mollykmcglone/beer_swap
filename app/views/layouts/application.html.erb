@@ -37,7 +37,7 @@
         </div><!-- /.navbar-collapse -->
       </div>
     </nav>
-      <div class="container">
+      <div class="push-down container">
         <% if flash[:notice] %>
           <div class="alert alert-info">
             <%= flash[:notice] %>
@@ -50,7 +50,7 @@
           <% end %>
       </div>
 
-      <div class="container">
+      <div class="push-down container">
         <%= yield %>
       </div>
 
