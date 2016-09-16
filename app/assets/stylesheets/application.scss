@@ -25,6 +25,10 @@
   text-align: center;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .btn {
   margin-top: 20px;
 }
@@ -111,13 +115,13 @@ body {
   margin: 5px;
 }
 
-.profile_avatar .img-responsive {
+.profile_avatar {
   margin: 0 auto;
 }
 
 .rounded {
-  height: 295px;
-  width: 295px;
+  height: 245px;
+  width: 245px;
   border-radius: 3%;
   overflow:hidden;
 }
@@ -128,7 +132,7 @@ body {
 }
 
 .push-down {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .post-image {
@@ -140,12 +144,5 @@ body {
   max-height: 250px;
   max-width: 250px;
   border-radius: 5px;
-  overflow:hidden;
-}
-
-.rounded-big {
-  max-height: 695px;
-  max-width: 595px;
-  border-radius: 5%;
   overflow:hidden;
 }

@@ -1,7 +1,7 @@
 <div class="container">
   <%= render 'layouts/errors', :object => @comment %>
 
-  <h1> Add a Comment: </h1>
+  <h2> Add a Comment to: "<%= @post.title %>" </h2>
 
   <%= render 'form' %>
 </div>

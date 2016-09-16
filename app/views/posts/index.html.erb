@@ -24,9 +24,11 @@
       <% end %>
     </ul>
   </div>
-  <% if current_user.admin %>
-  <div class="col-sm-2 col-sm-offset-5">
-    <p><%= link_to "Create a New Post", new_post_path, :class => "btn btn-primary" %></p>
-  </div>
+  <% if current_user %>
+    <% if current_user.admin %>
+    <div class="col-sm-2 col-sm-offset-5">
+      <p><%= link_to "Create a New Post", new_post_path, :class => "btn btn-primary" %></p>
+    </div>
+    <% end %>
   <% end %>
 </div>
