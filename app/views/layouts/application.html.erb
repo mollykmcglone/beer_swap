@@ -38,14 +38,22 @@
       </div>
     </nav>
       <div class="container">
-        <div class="flash_alert">
-          <h2><%= flash[:alert] %></h2>
-        </div>
-        <div class="flash_notice">
-            <h2><%= flash[:notice] %></h2>
-        </div>
-      <%= yield %>
-    </div>
+        <% if flash[:notice] %>
+          <div class="alert alert-info">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
+        <% if flash[:alert] %>
+          <div class="alert alert-danger">
+            <%= flash[:alert] %>
+          </div>
+          <% end %>
+      </div>
+
+      <div class="container">
+        <%= yield %>
+      </div>
+
       <footer class="footer">
         <div class="text-muted">
           <br><p>&copy; 2016 Molly McGlone</p>
