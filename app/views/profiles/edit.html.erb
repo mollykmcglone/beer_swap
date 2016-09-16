@@ -1,4 +1,4 @@
-<h1> Update your Profile</h1>
+<h1> Update your Address</h1>
 
 <%= form_for (@profile) do |f| %>
 <h3>Address:</h3>
@@ -22,13 +22,7 @@
   <%= f.text_field :zipcode %>
 </div>
 
-<h3>Avatar:</h3>
-<div class="form-group">
-  <%= f.label :avatar %>
-  <%= f.file_field :avatar %>
-</div>
-
-<%= f.submit %>
+<%= f.submit "Submit Changes" %>
 <% end %>
 <br>
 <p> <%= link_to "Return to profile", profile_path(current_user.id)  %></p>

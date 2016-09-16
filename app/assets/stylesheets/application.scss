@@ -94,15 +94,24 @@ body {
 }
 
 .round-image-50 {
-    background-color: white;
-    border: 1px solid #d9d9d9;
-    border-radius: 25px;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    height: 40px;
-    width: 40px;
-    overflow: hidden;
-    text-align: center;
-    img { width: 100% }
-    margin: 5px;
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  text-align: center;
+  img { width: 100% }
+  margin: 5px;
+}
+
+.profile_avatar .img-responsive {
+  margin: 0 auto;
+}
+
+.navbar {
+  height: 60px;
+  padding: 5px;
 }
