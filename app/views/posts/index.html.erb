@@ -8,18 +8,25 @@
   </div>
 </div>
 <div class="container">
-  <div class="col-sm-10 col-sm-offset-1">
+  <div class="col-sm-12">
     <ul>
       <% @posts.each do |post| %>
         <li>
-          <h3><%= link_to post.title, post_path(post), :id => post.title %></h3>
-          <h4>Posted <%= time_ago_in_words(post.created_at) %> ago in <%= post.category.name %> (<%= post.comments.length %> comments)</h4>
-          <p><%= post.content %><p><hr>
+          <div class="row">
+            <div class="post-image rounded-small">
+              <%= image_tag post.image.url(:medium) %>
+            </div>
+            <h2><%= link_to post.title, post_path(post), :id => post.title %></h2>
+            <h5>By <%= post.author %>, <%= time_ago_in_words(post.created_at) %> ago in <%= post.category.name %> (<%= post.comments.length %> comments)</h5>
+            <p><%= truncate(post.content, separator: ' ', length: 1000, omission: '... (continued)')%><p><hr>
+          </div>
         </li>
       <% end %>
     </ul>
   </div>
+  <% if current_user.admin %>
   <div class="col-sm-2 col-sm-offset-5">
     <p><%= link_to "Create a New Post", new_post_path, :class => "btn btn-primary" %></p>
   </div>
+  <% end %>
 </div>

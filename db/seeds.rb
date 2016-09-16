@@ -1,8 +1,5 @@
 categories = [
-  [ "Beer"],
-  [ "News"],
-  [ "Members"],
-  [ "Brewing"]
+  "Beer", "News", "Members","Brewing",
 ]
 
 categories.each do |name|

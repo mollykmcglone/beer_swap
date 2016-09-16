@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :ensure_admin!, except: [ :index, :show ]
+
   def index
     @posts = Post.all
   end
@@ -44,6 +46,16 @@ class PostsController < ApplicationController
 
 private
   def post_params
-    params.require(:post).permit(:title, :author, :content, :category_id)
+    params.require(:post).permit(:title, :author, :content, :category_id, :image)
+  end
+
+
+  def ensure_admin!
+    unless current_user.admin?
+
+      redirect_to root_path
+
+      return false
+    end
   end
 end

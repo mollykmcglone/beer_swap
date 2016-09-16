@@ -88,6 +88,9 @@ body {
   .jumbotron {
     display:none;
   }
+  .post-image {
+    display:none;
+  }
 }
 
 .navbar-nav {
@@ -112,6 +115,13 @@ body {
   margin: 0 auto;
 }
 
+.rounded {
+  height: 295px;
+  width: 295px;
+  border-radius: 3%;
+  overflow:hidden;
+}
+
 .navbar {
   height: 60px;
   padding: 5px;
@@ -119,4 +129,23 @@ body {
 
 .push-down {
   margin-top: 5px;
+}
+
+.post-image {
+  float:right;
+  margin: 20px;
+}
+
+.rounded-small {
+  max-height: 250px;
+  max-width: 250px;
+  border-radius: 5px;
+  overflow:hidden;
+}
+
+.rounded-big {
+  max-height: 695px;
+  max-width: 595px;
+  border-radius: 5%;
+  overflow:hidden;
 }
