@@ -17,7 +17,7 @@
               <%= image_tag post.image.url(:medium) %>
             </div>
             <h2><%= link_to post.title, post_path(post), :id => post.title %></h2>
-            <h5>By <%= post.author %>, <%= time_ago_in_words(post.created_at) %> ago in <%= post.category.name %> (<%= post.comments.length %> comments)</h5>
+            <h5>By <%= post.user.name %>, <%= time_ago_in_words(post.created_at) %> ago in <%= post.category.name %> (<%= post.comments.length %> comments)</h5>
             <p><%= truncate(post.content, separator: ' ', length: 1000, omission: '... (continued)')%><p><hr>
           </div>
         </li>

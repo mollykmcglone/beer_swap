@@ -20,7 +20,6 @@ class CommentsController < ApplicationController
     end
 
     def edit
-      before_action :ensure_current_user!
       @post = Post.find(params[:post_id])
       @comment = @post.comments.find(params[:id])
     end
