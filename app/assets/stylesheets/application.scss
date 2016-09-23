@@ -29,10 +29,6 @@ ul {
   font-weight: bold;
 }
 
-.btn {
-  margin-top: 20px;
-}
-
 .jumbotron {
   background: url("beers.jpg") no-repeat center center;
   -webkit-background-size: 100% 100%;
@@ -66,16 +62,16 @@ html {
 }
 
 body {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  margin-bottom: 60px;
+  padding-top: 70px;
+  padding-bottom: 80px;
+  margin-bottom: 80px;
 }
 
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 80px;
   background-color: #417D80;
   text-align: center;
 }
@@ -105,6 +101,32 @@ body {
   float: right;
 }
 
+.navbar {
+  min-height: 70px;
+  padding: 10px;
+  background-color: #417D80;
+  color: #FFFFFF;
+}
+
+.navbar .nav > li > a {
+  font-size: 1.3em;
+  color:  #fff;
+  margin-top: 10px;
+}
+
+.navbar-default {
+  border-color: transparent;
+}
+
+.navbar-brand {
+  padding: 0 15px;
+  margin-top: 5px;
+}
+
+.navbar-brand img {
+  margin-left: 20px;
+}
+
 .round-image-50 {
   background-color: white;
   border: 1px solid #417D80;
@@ -116,7 +138,7 @@ body {
   overflow: hidden;
   text-align: center;
   img { width: 100% }
-  margin: 5px;
+  margin: 10px;
 }
 
 .profile_avatar {
@@ -128,22 +150,6 @@ body {
   width: 245px;
   border-radius: 3%;
   overflow:hidden;
-}
-
-.navbar {
-  height: 60px;
-  padding: 5px;
-  background-color: #417D80;
-  color: #FFFFFF;
-}
-
-.navbar .nav > li > a {
-  font-size: 1.3em;
-  color:  #fff;
-}
-
-.navbar-default {
-  border-color: transparent;
 }
 
 .push-down {
@@ -165,4 +171,8 @@ body {
 .button-blue {
   background-color: #67989A;
   color: #fff;
+}
+
+.btn {
+  margin-top: 5px;
 }
