@@ -10,12 +10,16 @@ class CommentsController < ApplicationController
     def create
       @post = Post.find(params[:post_id])
       @comment = @post.comments.new(comment_params)
+      @user = User.find(@comment.user_id)
       if @comment.save
         flash[:notice] = "Thanks for your comment!"
-        redirect_to post_path(@comment.post)
+        respond_to do |format|
+          format.html {redirect_to post_path(@comment.post)}
+          format.js
+        end
       else
         flash[:alert] = "Oops, something went wrong!"
-        render :new
+        redirect_to post_path(@comment.post)
       end
     end
 

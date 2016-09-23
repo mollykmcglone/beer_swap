@@ -12,6 +12,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem "paperclip", "~> 5.0.0"
+gem "animate-rails"
+gem "chartkick"
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -20,6 +22,8 @@ group :development, :test do
   gem 'pry'
   gem 'shoulda-matchers'
   gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'simplecov', require: false
 end

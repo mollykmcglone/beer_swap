@@ -1,6 +1,6 @@
-<div class="col-xs-8">
-  <%= form_for [@post, @comment] do |f| %>
-
+<div class="col-xs-12">
+  <%= form_for [@post, @comment], html: {id: :new_comment_form}, remote: true do |f| %>
+  <h2> Add a Comment to: "<%= @post.title %>" </h2>
   <div class="form-group">
     <%= f.label :content %>
     <%= f.text_area :content,  size: "50x6", :class => "form-control" %>
@@ -10,5 +10,5 @@
     <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
   <%= f.submit 'Submit', :class => "btn btn-lg button-teal"%>
-  <% end %>
+  <% end %><br><br>
 </div>
