@@ -17,11 +17,11 @@
   line-height: 25px;
  }
 
- ul {
+ul {
    list-style: none;
  }
 
- .center {
+.center {
   text-align: center;
 }
 
@@ -66,7 +66,7 @@ html {
 }
 
 body {
-  padding-top: 80px;
+  padding-top: 60px;
   padding-bottom: 60px;
   margin-bottom: 60px;
 }
@@ -76,8 +76,12 @@ body {
   bottom: 0;
   width: 100%;
   height: 60px;
-  background-color: #f5f5f5;
+  background-color: #417D80;
   text-align: center;
+}
+
+.footer h5 {
+  color: #fff;
 }
 
 .text-muted {
@@ -86,7 +90,7 @@ body {
 }
 
 @media (max-width: 700px){
-  img {
+  .push-down img {
     display: none;
   }
   .jumbotron {
@@ -107,8 +111,8 @@ body {
   border-radius: 25px;
   -moz-border-radius: 25px;
   -webkit-border-radius: 25px;
-  height: 60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
   overflow: hidden;
   text-align: center;
   img { width: 100% }
@@ -127,14 +131,19 @@ body {
 }
 
 .navbar {
-  height: 80px;
+  height: 60px;
   padding: 5px;
   background-color: #417D80;
   color: #FFFFFF;
 }
 
-.nav-item link {
-  text-color: #FFFFFF;
+.navbar .nav > li > a {
+  font-size: 1.3em;
+  color:  #fff;
+}
+
+.navbar-default {
+  border-color: transparent;
 }
 
 .push-down {
@@ -151,4 +160,9 @@ body {
   max-width: 250px;
   border-radius: 5px;
   overflow:hidden;
+}
+
+.button-blue {
+  background-color: #67989A;
+  color: #fff;
 }

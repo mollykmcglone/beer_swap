@@ -16,7 +16,7 @@
             <div class="post-image rounded-small">
               <%= image_tag post.image.url(:medium) %>
             </div>
-            <h2><%= link_to post.title, post_path(post), :id => post.title %></h2>
+            <h3><%= link_to post.title, post_path(post), :id => post.title %></h3>
             <h5>By <%= post.user.name %>, <%= time_ago_in_words(post.created_at) %> ago in <%= post.category.name %> (<%= post.comments.length %> comments)</h5>
             <p><%= truncate(post.content, separator: ' ', length: 1000, omission: '... (continued)')%><p><hr>
           </div>
@@ -27,7 +27,7 @@
   <% if current_user %>
     <% if current_user.admin %>
     <div class="col-sm-2 col-sm-offset-5">
-      <p><%= link_to "Create a New Post", new_post_path, :class => "btn btn-primary" %></p>
+      <%= link_to "Create a New Post", new_post_path, :class => "btn btn-large btn-block button-blue" %>
     </div>
     <% end %>
   <% end %>
