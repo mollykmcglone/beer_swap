@@ -1,0 +1,21 @@
+<li>
+  <div class="row well beer-tile">
+    <h4><span class="bold"><%= @beer.name %></span></h4>
+    <h5>"<%= @beer.description %>"</h5>
+    <h5>Style: <%= @beer.style.name %></h5>
+    <h5>Brewed on: <%= @beer.brew_date %></h5>
+    <h5>Brewery:
+    <% if @beer.homebrew %>
+    Homebrew!
+    <% else %>
+    <%=@beer.brewery_name %>
+    <% end %>
+    </h5>
+    <% if current_user %>
+      <% if @user.id == current_user.id %>
+        <%= link_to 'Edit Beer', edit_profile_beer_path(@profile, @beer), :class => "btn btn-sm button-tan"  %>
+        <%= link_to 'Delete Beer', profile_beer_path(@profile, @beer), :data => {:confirm => "Are you sure?", :method => "delete"}, :class => "btn btn-sm button-red" %><br>
+      <% end %>
+    <% end %>
+  </div>
+</li>

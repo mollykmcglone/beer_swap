@@ -83,9 +83,6 @@ body {
 }
 
 @media (max-width: 700px){
-  .push-down img {
-    display: none;
-  }
   .jumbotron {
     display:none;
   }
@@ -171,7 +168,7 @@ body {
 }
 
 .button-blue {
-  background-color: #4F618F;
+  background-color: #7887AB;
   color: #fff;
 }
 
@@ -192,4 +189,8 @@ body {
 
 .btn {
   margin-top: 5px;
+}
+
+.beer-tile {
+  background-color: #FFE3AA;
 }

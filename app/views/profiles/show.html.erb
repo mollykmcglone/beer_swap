@@ -6,16 +6,13 @@
       <h5><%= @profile.city %>, <%= @profile.state %></h5>
       <h5>Richmond neighborhood </h5><br>
     </div>
-    <div class="col-sm-6">
-      <h3><%= @user.name %>'s swaps: 5 (3 gives, 2 gets)</h3>
-    </div>
   </div>
 
   <div class="row well">
     <div class="col-sm-4">
       <br>
       <div class="rounded">
-        <%= image_tag(@user.profile.avatar.url(:medium), class: "profile_avatar img-responsive") %>
+        <%= image_tag(@user.profile.avatar.url(:medium), class: "profile_avatar") %>
       </div>
       <br>
       <% if current_user == @user %>
@@ -37,8 +34,24 @@
       <h4>Kegerator?</h4>
       <p>Of course!</p>
     </div>
-    <div class="col-sm-5 col-sm-offset-1">
-      <h3> <%= @user.name %>'s currently sharing:</h3>
+    <div class="col-sm-6 col-sm-offset-1">
+      <h3 class="center"> <%= @user.name %>'s currently sharing:</h3><br>
+      <% if @profile.beers.any? %>
+        <ul id="beers">
+          <% @profile.beers.each do |beer| %>
+            <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@profile => @profile, :@user => User.find(@profile.user_id) }%>
+          <% end %>
+      <% else %>
+        <br><p class="center"><%= @user.name %> isn't sharing any beers right now.</p>
+      <% end %>
+        <% if current_user %>
+          <% if @user.id == current_user.id %>
+            <div class="col-sm-8 col-sm-offset-2">
+              <%= link_to "Share a new beer", new_profile_beer_path(@profile.id), :class => "btn btn-lg btn-block button-blue" %>
+            </div>
+          <% end %>
+        <% end %>
+        </ul>
     </div>
   </div>
 </div>
