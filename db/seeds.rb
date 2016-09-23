@@ -5,7 +5,7 @@ users = [
 ]
 
 users.each do |name, email, password, admin|
-  User.create( name: name, email: email, password: password, admin: admin)
+  User.create( name: name, email: email, password: password, admin: admin )
 end
 
 categories = [
@@ -25,5 +25,21 @@ posts = [
 ]
 
 posts.each do |title, content, category_id|
-  Post.create( title: title, user: User.first, content: content, category_id: category_id)
+  Post.create( title: title, user: User.first, content: content, category_id: category_id )
+end
+
+styles = ["Porter/Stout", "IPA", "Pale Ale", "Sour", "Hefeweizen", "Lager", "Amber"]
+
+styles.each do |name|
+  Style.create( name: name )
+end
+
+beers = [
+  ["Vanilla Porter", "22 oz. bottles", "Really smooth and tasty porter that I made with real vanilla beans.", 6.50, "2016-09-05", true, ""],
+
+  ["Oatmeal Stout", "growler", "This is a very nice, creamy oatmeal stout.", 7.30, "2016-09-10", true, ""]
+]
+
+beers.each do |name, container_type, description, abv, brew_date, homebrew, brewery_name|
+  Beer.create( name: name, container_type: container_type, description: description, abv: abv, brew_date: brew_date, homebrew: homebrew, brewery_name: brewery_name, profile: Profile.first, style: Style.first )
 end
