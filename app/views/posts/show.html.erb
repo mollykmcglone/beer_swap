@@ -25,11 +25,15 @@
       <% @post.comments.each do |comment| %>
       <li>
         <div class="well col-sm-8 col-sm-offset-1">
-          <h5><span class="bold"><%= comment.user.name %></span> says:</h5>
+          <h5><span class="bold"><%= link_to comment.user.name, profile_path(comment.user_id) %></span> says:</h5>
           <h5>"<%= comment.content %>"</h5>
           <%= time_tag comment.created_at %><br>
-          <%= link_to 'Edit Comment', edit_post_comment_path(@post, comment), :class => "btn btn-sm btn-success"  %>
-          <%= link_to 'Delete Comment', post_comment_path(@post, comment), :data => {:confirm => "Are you sure?", :method => "delete"}, :class => "btn btn-sm btn-danger" %><br>
+          <% if current_user %>
+            <% if comment.user_id == current_user.id %>
+              <%= link_to 'Edit Comment', edit_post_comment_path(@post, comment), :class => "btn btn-sm button-teal"  %>
+              <%= link_to 'Delete Comment', post_comment_path(@post, comment), :data => {:confirm => "Are you sure?", :method => "delete"}, :class => "btn btn-sm button-red" %><br>
+            <% end %>
+          <% end %>
         </div>
       </li>
       <% end %>
@@ -42,7 +46,7 @@
   </div>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-1">
-      <%= link_to 'Add a Comment', new_post_comment_path(@post), :class => "btn btn-primary" %><hr>
+      <%= link_to 'Add a Comment', new_post_comment_path(@post), :class => "btn btn-lg button-blue" %><hr>
       <% if current_user %>
         <% if current_user.admin %>
         <%= link_to 'Edit Post', edit_post_path(@post) %><br>

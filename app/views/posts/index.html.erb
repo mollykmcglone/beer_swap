@@ -26,8 +26,8 @@
   </div>
   <% if current_user %>
     <% if current_user.admin %>
-    <div class="col-sm-2 col-sm-offset-5">
-      <%= link_to "Create a New Post", new_post_path, :class => "btn btn-large btn-block button-blue" %>
+    <div class="col-sm-4 col-sm-offset-4">
+      <%= link_to "Create New Post", new_post_path, :class => "btn btn-lg btn-block button-blue" %>
     </div>
     <% end %>
   <% end %>
