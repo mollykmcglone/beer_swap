@@ -21,14 +21,16 @@ Project Objectives:
 * SimpleCov is included and reports at least 80% test coverage.
 * Paperclip is included to upload images.
 * There is authorization for admin accounts.
+* AJAX is used for form submissions.
+* AJAX code been successfully tested.
 
 ## Installation
 
 * `gem install rails`
 * `git clone https://github.com/mollykmcglone/beer_swap.git`
-* `postgres`
 * `cd beer_swap`
 * `bundle install`
+* `postgres`
 * `rake db:setup`
 * `rake db:test:prepare`
 
@@ -41,7 +43,7 @@ Project Objectives:
 
 ## Known Issues/Bugs
 
-* This app is a work in progress- as of this time it is a blog with posts and comments, user account creation/destruction and login/logout.  Beers, user appreciations, mapping, search and more are all coming soon!
+* This app is a work in progress- as of this time there's a blog with posts and comments, user account creation/login/logout/destruction, and beer postings.  Messaging, appreciations, mapping, search and more are all coming soon!
 
 ## Support and contact details
 
@@ -54,6 +56,7 @@ Please contact me with any questions, concerns, or ideas at mollykmcglone@gmail.
 * PostgreSQL
 * HTML/CSS
 * Bootstrap
+* AJAX
 
 ### License
 
