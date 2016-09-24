@@ -26,6 +26,6 @@ describe "the add a comment process" do
     click_on "Add a Comment"
     fill_in "Content", with: ""
     click_on "Submit"
-    expect(page).to have_content "Content can't be blank"
+    expect(page).to have_content "Oops, something went wrong!"
   end
 end

@@ -28,4 +28,20 @@ FactoryGirl.define do
     zipcode('97214')
     avatar Rack::Test::UploadedFile.new('spec/fixtures/images/missing.png', 'image/png')
   end
+
+  factory(:style) do
+    name('Porter/Stout')
+    id(1)
+  end
+
+  factory(:beer) do
+    style
+    profile
+    name('Outrageous Oatmeal Stout')
+    description('This turned out really well! Creamy and not-too-sweet.')
+    abv(7.5)
+    container_type('22 oz. bottles')
+    homebrew(true)
+    brew_date('2016-06-13')
+  end
 end

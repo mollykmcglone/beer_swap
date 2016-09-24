@@ -8,11 +8,10 @@ describe "the edit a profile process" do
     fill_in "Email", with: "Person@gmail.com"
     fill_in "Password", with: "password"
     click_on "Log in"
-    click_on 'My Profile'
     click_on 'Edit Account Info'
     fill_in 'Name', :with => 'Person McPerson'
     fill_in 'Current password', :with => 'password'
-    click_on 'Update'
+    click_on 'Submit Changes'
     expect(page).to have_content 'Your account has been updated successfully'
   end
 end

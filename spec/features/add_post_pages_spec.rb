@@ -9,7 +9,7 @@ describe "the add a post process" do
     fill_in "Email", with: "Person@gmail.com"
     fill_in "Password", with: "password"
     click_on "Log in"
-    click_link 'Create a New Post'
+    click_link 'Create New Post'
     fill_in 'Title', :with => 'This is a post'
     choose ("post_category_id_2")
     fill_in 'Content', :with => 'I like beer.'
@@ -25,7 +25,7 @@ describe "the add a post process" do
     fill_in "Email", with: "Person@gmail.com"
     fill_in "Password", with: "password"
     click_on "Log in"
-    click_link 'Create a New Post'
+    click_link 'Create New Post'
     fill_in 'Title', :with => ''
     choose ("post_category_id_2")
     fill_in 'Content', :with => 'I like beer.'
