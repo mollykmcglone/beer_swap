@@ -9,6 +9,7 @@ describe "the add a post process" do
     fill_in "Email", with: "Person@gmail.com"
     fill_in "Password", with: "password"
     click_on "Log in"
+    click_on "Blog"
     click_link 'Create New Post'
     fill_in 'Title', :with => 'This is a post'
     choose ("post_category_id_2")
@@ -25,6 +26,7 @@ describe "the add a post process" do
     fill_in "Email", with: "Person@gmail.com"
     fill_in "Password", with: "password"
     click_on "Log in"
+    click_on "Blog"
     click_link 'Create New Post'
     fill_in 'Title', :with => ''
     choose ("post_category_id_2")
@@ -43,6 +45,7 @@ describe "the add a post process" do
     fill_in "Email", with: "Person@gmail.com"
     fill_in "Password", with: "password"
     click_on "Log in"
+    click_on "Blog"
     expect(page).to_not have_content 'Create a New Post'
   end
 end

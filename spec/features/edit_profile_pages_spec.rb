@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "the edit a profile process" do
+describe "the edit a profile process", vcr: true do
   it "allows a user to update their account information" do
     profile = FactoryGirl.create(:profile)
     visit posts_path

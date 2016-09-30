@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "the add a beer process", js: true do
+describe "the add a beer process", js: true, vcr: true do
   it "allows a user to post a new beer for sharing" do
     profile = FactoryGirl.create(:profile)
     style = FactoryGirl.create(:style)

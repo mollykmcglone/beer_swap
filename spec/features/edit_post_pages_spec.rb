@@ -8,6 +8,7 @@ describe "the edit a post process" do
     fill_in "Email", with: "Person@gmail.com"
     fill_in "Password", with: "password"
     click_on "Log in"
+    click_on "Blog"
     click_on 'No beer for Donald Trump'
     click_on 'Edit Post'
     fill_in 'Title', :with => 'No beer for Donald Trump!!!'
@@ -22,6 +23,7 @@ describe "the edit a post process" do
     fill_in "Email", with: "Person@gmail.com"
     fill_in "Password", with: "password"
     click_on "Log in"
+    click_on "Blog"
     click_on 'No beer for Donald Trump'
     click_on 'Edit Post'
     fill_in 'Title', :with => ''
