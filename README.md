@@ -23,6 +23,7 @@ Project Objectives:
 * There is authorization for admin accounts.
 * AJAX is used for form submissions.
 * AJAX code been successfully tested.
+* Application successfully implements an API.
 
 ## Installation
 
@@ -34,16 +35,24 @@ Project Objectives:
 * `rake db:setup`
 * `rake db:test:prepare`
 
+## Database
+
+This app uses the Google Maps API.  In order to re-purpose this app you will need to include your own API key from Google.
+* Visit https://developers.google.com/maps/documentation/javascript/get-api-key and get/access a free API key.
+* Open or create a file called .env in the top level of your project directory and add:
+```
+GOOGLE_API_KEY=[YOUR_API_KEY_GOES_HERE]
+```
+
 ## Running / Development
 
 * Start the project with `rails server`
 * Visit your app at [http://localhost:3000](http://localhost:3000).
 * To login as an admin => email: molly@gmail.com and password: password
-* To login as a non-admin user => email: erik@gmail.com and password: password
 
 ## Known Issues/Bugs
 
-* This app is a work in progress- as of this time there's a blog with posts and comments, user account creation/login/logout/destruction, and beer postings.  Messaging, appreciations, mapping, search and more are all coming soon!
+* This app is a work in progress- as of this time there's a blog with posts and comments, user account creation/login/logout/destruction, beer postings, and a simple map.  Messaging, appreciations, search and more are all coming soon!
 
 ## Support and contact details
 
