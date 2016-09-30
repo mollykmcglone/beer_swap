@@ -29,31 +29,28 @@ ul {
   font-weight: bold;
 }
 
-.jumbotron {
-  background: url("beers.jpg") no-repeat center center;
-  -webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -o-background-size: 100% 100%;
-  background-size: 100% 100%;
-  position: relative;
+.top {
+  color: #fff;
+  margin: none;
+  padding: none;
 }
 
-.push-space {
+.top-home {
+  height: 600px;
+  background-color: #236467;
+}
+
+.top-news {
   height: 250px;
+  background-color: #236467;
 }
 
-.test {
-  max-width: 750px;
+.welcome {
+  padding-top: 75px;
 }
 
-.jumbotron-text {
-  position: absolute;
-  color: #FFF;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 4em;
-  line-height: 1em;
+.welcome-small {
+  padding-top: 50px;
 }
 
 html {
@@ -62,17 +59,18 @@ html {
 }
 
 body {
-  padding-top: 70px;
-  padding-bottom: 80px;
-  margin-bottom: 80px;
+  padding-top: 50px;
+  padding-bottom: 160px;
+  margin-bottom: 160px;
+  background-color: #f1f1f1;
 }
 
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 80px;
-  background-color: #67989A;
+  height: 160px;
+  background-color: #236467;
   text-align: center;
 }
 
@@ -98,7 +96,7 @@ body {
 .navbar {
   min-height: 70px;
   padding: 10px;
-  background-color: #67989A;
+  background-color: #236467;
   color: #FFFFFF;
 }
 
@@ -147,7 +145,11 @@ body {
 }
 
 .push-down {
-  margin-top: 10px;
+  margin-top: 50px;
+}
+
+.push-way-down {
+  margin-top: 100px;
 }
 
 .post-image {
@@ -183,7 +185,7 @@ body {
 }
 
 .button-tan {
-  background-color: #D4B26A;
+  background-color: #EFC84A;
   color: #fff;
 }
 
@@ -192,5 +194,29 @@ body {
 }
 
 .beer-tile {
-  background-color: #FFE3AA;
+  background-color: #F2D379;
+}
+
+.beer-image {
+  height: 150px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.beer-image-small {
+  height: 100px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.join-button {
+  color: #000;
+}
+
+.flash {
+  background-color: #236467;
+  margin: none;
+  padding: none;
 }

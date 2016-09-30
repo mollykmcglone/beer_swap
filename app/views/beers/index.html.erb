@@ -1,0 +1,33 @@
+<div class="top top-news">
+  <div class="welcome-small">
+    <h1 class="center">Find beer near you</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-sm-6 push-down">
+    <ul>
+      <% @beers.each do |beer| %>
+        <li>
+          <div class="row well beer-tile">
+            <h4><span class="bold"><%= beer.name %></span></h4>
+            <p>"<%= beer.description %>"</p>
+            <p>Style: <%= beer.style.name %></p>
+            <p>Brewed on: <%= beer.brew_date %></p>
+            <p>Brewery:
+            <% if beer.homebrew %>
+            Homebrew!
+            <% else %>
+            <%=beer.brewery_name %>
+            <% end %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <% if current_user %>
+    <div class="col-sm-4 col-sm-offset-4">
+      <%= link_to "Post a beer to share", new_post_path, :class => "btn btn-lg btn-block button-teal" %>
+    </div>
+  <% end %>
+</div>

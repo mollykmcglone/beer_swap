@@ -1,36 +1,43 @@
-<div class="col-sm-6 col-sm-offset-3">
-  <h2 class="center">Welcome to Beer Swap!</h2>
+<div class="container">
+  <div class="row push-way-down">
+    <div class="well col-sm-6 col-sm-offset-3">
+      <div class="col-sm-10 col-sm-offset-1">
+        <%= image_tag("beer.png", class: "beer-image-small") %>
+        <h2 class="center">Create your account:</h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
 
-    <div class="form-group">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true, class: "form-control" %>
+          <div class="form-group">
+            <%= f.label :name %><br />
+            <%= f.text_field :name, autofocus: true, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Submit", class: "btn btn-lg btn-block button-tan" %>
+          </div>
+        <% end %>
+
+        <br><br><%= render "users/shared/links" %>
+      </div>
     </div>
-
-    <div class="form-group">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Create account", class: "btn btn-lg btn-block button-tan" %>
-    </div>
-  <% end %>
-
-  <br><br><%= render "users/shared/links" %>
+  </div>
 </div>
