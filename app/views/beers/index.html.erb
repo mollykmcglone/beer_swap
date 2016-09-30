@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col-sm-5 push-down">
-    <h2>Recent beer postings:</h2>
     <ul>
+      <h2>Recent postings:</h2>
       <% @beers.each do |beer| %>
         <li>
           <div class="row well beer-tile">
@@ -20,7 +20,8 @@
 
   <div class="col-sm-6 col-sm-offset-1 push-down">
     <h2>Free beer is all around you!</h2>
-    <div>
+
+    <div><br>
       <div id="map"></div>
     </div>
 
