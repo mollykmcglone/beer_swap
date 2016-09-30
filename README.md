@@ -37,7 +37,7 @@ Project Objectives:
 
 ## Database
 
-This app uses the Google Maps API.  In order to re-purpose this app you will need to include your own API key from Google.
+This app uses the Google Maps API.  In order to try out this app you will need to include your own API key from Google.
 * Visit https://developers.google.com/maps/documentation/javascript/get-api-key and get/access a free API key.
 * Open or create a file called .env in the top level of your project directory and add:
 ```
