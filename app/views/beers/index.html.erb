@@ -1,16 +1,13 @@
 <div class="container">
   <div class="col-sm-5 push-down">
-    <h2>Recent postings:</h2>
+    <h2>Recent beer postings:</h2>
     <ul>
       <% @beers.each do |beer| %>
         <li>
           <div class="row well beer-tile">
-            <h4><span class="bold"><%= beer.name %></span></h4>
+            <h4><span class="bold blue"><%= beer.name %></span></h4>
             <p>"<%= beer.description %>"</p>
-            <p>Style: <%= beer.style.name %></p>
-            <p>Brewed on: <%= beer.brew_date %></p>
-            <p>Brewery:
-            <% if beer.homebrew %>
+            <%= beer.style.name %> from <% if beer.homebrew %>
             Homebrew!
             <% else %>
             <%=beer.brewery_name %>
@@ -22,7 +19,7 @@
   </div>
 
   <div class="col-sm-6 col-sm-offset-1 push-down">
-    <h2>Beer swappers are all around you!</h2>
+    <h2>Free beer is all around you!</h2>
     <div>
       <div id="map"></div>
     </div>

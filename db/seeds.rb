@@ -1,7 +1,7 @@
 users = [
-  ["Molly", "molly@gmail.com", "password", true, "3936 SE Sherman Street", "Portland", "Oregon", 97214],
-  ["Maldon", "maldon@gmail.com", "123456", false, "1004 N Killingsworth St", "Portland", "Oregon", 97217],
-  ["Erik", "erik@gmail.com", "password", false, "3181 SW Sam Jackson Park Rd", "Portland", "Oregon", 97239]
+  ["Molly", "molly@gmail.com", "password", true],
+  ["Maldon", "maldon@gmail.com", "123456", false],
+  ["Erik", "erik@gmail.com", "password", false]
 ]
 
 users.each do |name, email, password, admin|
@@ -12,15 +12,13 @@ users.each do |name, email, password, admin|
   admin: admin)
 end
 
-users = [
-  [User.first, "3936 SE Sherman Street", "Portland", "Oregon", 97214],
-  [User.second, "1004 N Killingsworth St", "Portland", "Oregon", 97217],
-  [User.third, "3181 SW Sam Jackson Park Rd", "Portland", "Oregon", 97239],
-]
 
-users.each do |user, address, city, state, zipcode|
-  User.update( profile_attributes: { user: user, address: address, city: city, state: state, zipcode: zipcode })
-end
+User.first.update( profile_attributes: { address: "3936 SE Sherman Street", city: "Portland", state: "Oregon", zipcode: 97214 })
+
+User.second.update( profile_attributes: { address: "3181 SW Sam Jackson Park Rd", city: "Portland", state: "Oregon", zipcode: 97217 })
+
+User.last.update( profile_attributes: { address: "1004 N Killingsworth St", city: "Portland", state: "Oregon", zipcode: 97217 })
+
 
 categories = [
   ["Beer", 1],
@@ -49,11 +47,13 @@ styles.each do |name|
 end
 
 beers = [
-  ["Vanilla Porter", "22 oz. bottles", "Really smooth and tasty porter that I made with real vanilla beans.", 6.50, "2016-09-05", true, ""],
+  ["Vanilla Porter", "22 oz. bottles", "Really smooth and tasty porter that I made with real vanilla beans.", 6.50, "2016-09-05", true, "", Profile.first, Style.first],
 
-  ["Oatmeal Stout", "growler", "This is a very nice, creamy oatmeal stout.", 7.30, "2016-09-10", true, ""]
+  ["Oatmeal Stout", "growler", "This is a very nice, creamy oatmeal stout.", 7.30, "2016-09-10", true, "", Profile.second, Style.first],
+
+  ["Awesome IPA", "12 oz. bottles", "What a delicious summer beer!", 6.44, "2016-08-12", false, "Green Dragon", Profile.last, Style.second]
 ]
 
-beers.each do |name, container_type, description, abv, brew_date, homebrew, brewery_name|
-  Beer.create( name: name, container_type: container_type, description: description, abv: abv, brew_date: brew_date, homebrew: homebrew, brewery_name: brewery_name, profile: Profile.first, style: Style.first )
+beers.each do |name, container_type, description, abv, brew_date, homebrew, brewery_name, profile, style|
+  Beer.create( name: name, container_type: container_type, description: description, abv: abv, brew_date: brew_date, homebrew: homebrew, brewery_name: brewery_name, profile: profile, style: style )
 end
