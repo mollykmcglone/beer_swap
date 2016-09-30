@@ -170,7 +170,7 @@ body {
 }
 
 .button-blue {
-  background-color: #7887AB;
+  background-color: #334D5C;
   color: #fff;
 }
 
@@ -216,7 +216,12 @@ body {
 }
 
 .flash {
-  background-color: #236467;
+  background-color: inherit;
   margin: none;
   padding: none;
+}
+
+#map {
+  width: 500px;
+  height: 400px;
 }

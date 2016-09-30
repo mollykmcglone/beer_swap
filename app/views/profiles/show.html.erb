@@ -49,7 +49,7 @@
         <% if current_user %>
           <% if @user.id == current_user.id %>
             <div class="col-sm-11 col-sm-offset-1">
-              <%= link_to "Share a new beer", new_profile_beer_path(@profile.id), remote: true, :class => "btn btn-lg btn-block button-blue", id: "new_beer_link" %>
+              <%= link_to "Share a new beer", new_profile_beer_path(@profile.id), remote: true, :class => "btn btn-lg btn-block button-teal", id: "new_beer_link" %>
             </div>
           <% end %>
         <% end %>

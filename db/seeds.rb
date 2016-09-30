@@ -1,11 +1,25 @@
 users = [
-  ["Molly", "molly@gmail.com", "password", true],
-  ["Maldon", "maldon@gmail.com", "123456", false],
-  ["Erik", "erik@gmail.com", "password", false]
+  ["Molly", "molly@gmail.com", "password", true, "3936 SE Sherman Street", "Portland", "Oregon", 97214],
+  ["Maldon", "maldon@gmail.com", "123456", false, "1004 N Killingsworth St", "Portland", "Oregon", 97217],
+  ["Erik", "erik@gmail.com", "password", false, "3181 SW Sam Jackson Park Rd", "Portland", "Oregon", 97239]
 ]
 
 users.each do |name, email, password, admin|
-  User.create( name: name, email: email, password: password, admin: admin )
+  User.create(
+  name: name,
+  email: email,
+  password: password,
+  admin: admin)
+end
+
+users = [
+  [User.first, "3936 SE Sherman Street", "Portland", "Oregon", 97214],
+  [User.second, "1004 N Killingsworth St", "Portland", "Oregon", 97217],
+  [User.third, "3181 SW Sam Jackson Park Rd", "Portland", "Oregon", 97239],
+]
+
+users.each do |user, address, city, state, zipcode|
+  User.update( profile_attributes: { user: user, address: address, city: city, state: state, zipcode: zipcode })
 end
 
 categories = [

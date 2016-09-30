@@ -4,8 +4,12 @@ class BeersController < ApplicationController
 
   def index
     @beers = Beer.all
+    @hash = Gmaps4rails.build_markers(@beers) do |beer, marker|
+      marker.lat beer.profile.latitude
+      marker.lng beer.profile.longitude
+    end
   end
-  
+
   def new
     @profile = Profile.find(params[:profile_id])
     @beer = @profile.beers.new

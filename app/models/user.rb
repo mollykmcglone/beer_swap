@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_one :profile, dependent: :destroy
+  accepts_nested_attributes_for :profile, :update_only => true
   has_many :comments
   has_many :posts
   after_create :create_profile

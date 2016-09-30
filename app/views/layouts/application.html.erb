@@ -5,6 +5,8 @@
     <link rel="icon">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="//maps.google.com/maps/api/js?key=<%=ENV['GOOGLE_API_KEY']%>"></script>
+    <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:bold' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
@@ -25,7 +27,7 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Beers", beers_path %></li>
+            <li><%= link_to "Find Beer", beers_path %></li>
             <li class="nav-item"><%= link_to "Blog", posts_path %></li>
             <% if current_user %>
               <li><%= link_to "Edit Account Info", edit_user_registration_path(current_user) %></li>
