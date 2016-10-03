@@ -37,7 +37,6 @@ html {
 
 body {
   padding-top: 50px;
-  // padding-bottom: 160px;
   margin-bottom: 160px;
   background-color: #f1f1f1;
 }
@@ -48,7 +47,7 @@ body {
   padding: none;
 }
 
-@media (max-width: 750px){
+@media (max-width: 800px){
   .post-image {
     display:none;
   }
@@ -148,7 +147,7 @@ body {
 
 // images and maps
 .round-image-50 {
-  background-color: white;
+  background-color: #417D80;
   border: 1px solid #417D80;
   border-radius: 25px;
   -moz-border-radius: 25px;
@@ -243,6 +242,7 @@ body {
 
 .btn {
   margin-top: 5px;
+  font-size: 0.75em;
 }
 
 .blue {
@@ -266,8 +266,15 @@ body {
 .middle {
   padding: none;
   margin: none;
-  height: 425px;
+  height: 375px;
   background-color: #f1f1f1;
+}
+
+.middle-gray {
+  padding: none;
+  margin: none;
+  height: 375px;
+  background-color: #d8d8d8;
 }
 
 .process {

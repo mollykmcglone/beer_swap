@@ -21,17 +21,9 @@
     </div>
     <div class="row">
       <div class="col-sm-4 col-sm-offset-1">
-        <div class="row">
-          <div class="col-sm-4 col-sm-offset-4 box">
-            <%= image_tag("keg_with_spigot.png", class: "home-icons") %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <h3 class="center teal bold">Have some extra beer?<h3>
-            <h4 class="center lead">Share with your neighbors for free or ask for something in trade.</h4><br>
-          </div>
-        </div>
+        <%= image_tag("keg_with_spigot.png", class: "home-icons") %>
+        <h3 class="center teal bold">Do you have extra beer?<h3>
+        <h4 class="center lead">Share with your neighbors for free or ask for something in trade.</h4><br>
       </div>
       <div class="col-sm-4 col-sm-offset-2">
         <%= image_tag("growler.png", class: "home-icons") %>
@@ -47,6 +39,16 @@
       <div class="col-sm-12">
         <%= image_tag("swap_process.png", class: "process-image") %>
       <div>
+    </div>
+  </div>
+</div>
+<div class="middle-gray">
+  <div class="welcome">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <h2 class="center">See it in Action</h2><br>
+        <h2><%= link_to "Find Beer", beers_path, class: "btn btn-lg btn-block button-teal" %></h2>
+      </div>
     </div>
   </div>
 </div>
