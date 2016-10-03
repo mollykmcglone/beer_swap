@@ -5,6 +5,7 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+//general app-wide layouts and div/text styling
  h1 {
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   font-size: 50px;
@@ -29,6 +30,49 @@ ul {
   font-weight: bold;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  padding-top: 50px;
+  padding-bottom: 160px;
+  margin-bottom: 160px;
+  background-color: #f1f1f1;
+}
+
+.flash {
+  background-color: inherit;
+  margin: none;
+  padding: none;
+}
+
+@media (max-width: 750px){
+  .post-image {
+    display:none;
+  }
+  .beer-image-small {
+    height: 50px;
+    weight: auto;
+  }
+  .middle {
+    display: none;
+  }
+  .middle-yellow {
+    display: none;
+  }
+}
+
+.push-down {
+  margin-top: 50px;
+}
+
+.push-way-down {
+  margin-top: 100px;
+}
+
+//jumbotron-style divs
 .top {
   color: #fff;
   margin: none;
@@ -50,45 +94,10 @@ ul {
 }
 
 .welcome-small {
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  padding-top: 50px;
-  padding-bottom: 160px;
-  margin-bottom: 160px;
-  background-color: #f1f1f1;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 160px;
-  background-color: #236467;
-  text-align: center;
-}
-
-.text-muted {
-  width: auto;
-  padding: 0 15px;
-  color: #fff;
-}
-
-@media (max-width: 700px){
-  .jumbotron {
-    display:none;
-  }
-  .post-image {
-    display:none;
-  }
-}
-
+//navbar and footer
 .navbar-nav {
   float: right;
 }
@@ -119,6 +128,22 @@ body {
   margin-left: 20px;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 160px;
+  background-color: #236467;
+  text-align: center;
+}
+
+.text-muted {
+  width: auto;
+  padding: 0 15px;
+  color: #fff;
+}
+
+// images and maps
 .round-image-50 {
   background-color: white;
   border: 1px solid #417D80;
@@ -144,14 +169,6 @@ body {
   overflow:hidden;
 }
 
-.push-down {
-  margin-top: 50px;
-}
-
-.push-way-down {
-  margin-top: 100px;
-}
-
 .post-image {
   float:right;
   margin: 20px;
@@ -162,6 +179,38 @@ body {
   max-width: 250px;
   border-radius: 5px;
   overflow:hidden;
+}
+
+.beer-image {
+  height: 150px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.beer-image-small {
+  height: 100px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.home-icons {
+  height: 75px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#map {
+  width: 500px;
+  height: 400px;
+}
+
+
+// buttons and text colors
+.join-button {
+  color: #000;
 }
 
 .button-teal {
@@ -193,39 +242,34 @@ body {
   margin-top: 5px;
 }
 
+.blue {
+  color: #334D5C;
+}
+
+.teal {
+  color: #67989A;
+}
+
+.green {
+  color: #54A759;
+}
+
+//etc.
+
 .beer-tile {
   background-color: #F2D379;
 }
 
-.beer-image {
-  height: 150px;
-  width: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.beer-image-small {
-  height: 100px;
-  width: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.join-button {
-  color: #000;
-}
-
-.flash {
-  background-color: inherit;
-  margin: none;
+.middle {
   padding: none;
+  margin: none;
+  height: 425px;
+  background-color: #f1f1f1;
 }
 
-#map {
-  width: 500px;
-  height: 400px;
-}
-
-.blue {
-  color: #334D5C;
+.middle-gray {
+  padding: none;
+  margin: none;
+  height: 600px;
+  background-color: #D8D8D8;
 }
