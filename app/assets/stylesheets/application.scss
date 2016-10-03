@@ -37,7 +37,7 @@ html {
 
 body {
   padding-top: 50px;
-  padding-bottom: 160px;
+  // padding-bottom: 160px;
   margin-bottom: 160px;
   background-color: #f1f1f1;
 }
@@ -59,7 +59,10 @@ body {
   .middle {
     display: none;
   }
-  .middle-yellow {
+  .middle-gray {
+    display: none;
+  }
+  .process {
     display: none;
   }
 }
@@ -133,7 +136,7 @@ body {
   bottom: 0;
   width: 100%;
   height: 160px;
-  background-color: #236467;
+  background-color: #334D5C;
   text-align: center;
 }
 
@@ -267,9 +270,16 @@ body {
   background-color: #f1f1f1;
 }
 
-.middle-gray {
+.process {
   padding: none;
+  width: auto;
   margin: none;
-  height: 600px;
-  background-color: #D8D8D8;
+  background-color: #EFC84A;
+}
+
+.process-image {
+  height: 1000px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
 }
