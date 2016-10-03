@@ -10,7 +10,7 @@
       <% @posts.each do |post| %>
         <li>
           <div class="row">
-            <div class="post-image rounded-small">
+            <div class="post-image rounded-post">
               <%= image_tag post.image.url(:medium) %>
             </div>
             <h3><%= link_to post.title, post_path(post), :id => post.title %></h3>
@@ -24,7 +24,7 @@
   <% if current_user %>
     <% if current_user.admin %>
     <div class="col-sm-4 col-sm-offset-4">
-      <%= link_to "Create New Post", new_post_path, :class => "btn btn-lg btn-block button-tan" %>
+      <h3><%= link_to "Create New Post", new_post_path, :class => "btn btn-lg btn-block button-tan" %></h3><br><br>
     </div>
     <% end %>
   <% end %>

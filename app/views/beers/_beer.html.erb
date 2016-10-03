@@ -1,16 +1,12 @@
 <li>
   <div class="row well beer-tile">
-    <h4><span class="bold"><%= @beer.name %></span></h4>
-    <h5>"<%= @beer.description %>"</h5>
-    <h5>Style: <%= @beer.style.name %></h5>
-    <h5>Brewed on: <%= @beer.brew_date %></h5>
-    <h5>Brewery:
-    <% if @beer.homebrew %>
+    <h4><span class="bold blue"><%= @beer.name %></span></h4>
+    <p>"<%= @beer.description %>"</p>
+    <p><%= @beer.style.name %> from <% if @beer.homebrew %>
     Homebrew!
     <% else %>
     <%=@beer.brewery_name %>
-    <% end %>
-    </h5>
+    <% end %> Brewed on: <%= @beer.brew_date %></p>
     <% if current_user %>
       <% if @user.id == current_user.id %>
         <%= link_to 'Edit', edit_profile_beer_path(@profile, @beer)%><br>

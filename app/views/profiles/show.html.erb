@@ -1,58 +1,63 @@
-<div class="container">
-
-  <div class="row">
-    <div class="col-sm-6 push-down">
-      <h1><%= @user.name %></h1>
-      <% if @profile.city %>
-        <h5><%= @profile.city %>, <%= @profile.state %></h5>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="row well">
-    <div class="col-sm-4">
-      <br>
-      <div class="rounded">
-        <%= image_tag(@user.profile.avatar.url(:medium), class: "profile_avatar") %>
-      </div>
-      <br>
-      <% if current_user == @user %>
-        <%= form_for (@profile) do |f| %>
-        <div class="form-group">
-          <h4>Update your profile photo</h4>
-          <%= f.file_field :avatar %>
+<div class="container bottom">
+    <div class="col-sm-12 well push-down">
+      <div class="row">
+        <div class="col-sm-3">
+          <h1><%= @user.name %></h1>
+          <% if @profile.city %>
+          <h5><%= @profile.city %>, <%= @profile.state %></h5>
+          <% end %>
         </div>
-        <%= f.submit "Upload Image", class: "btn btn-md button-teal" %>
+      </div>
+      <div class="row">
+        <div class="col-sm-3 push-down">
+          <div class="rounded-profile">
+            <%= image_tag(@user.profile.avatar.url(:medium), class: "profile_avatar") %>
+          </div>
+          <% if current_user == @user %>
+            <%= form_for (@profile) do |f| %>
+            <div class="form-group">
+              <h4>Update your profile photo</h4>
+              <%= f.file_field :avatar %>
+            </div>
+            <h4><%= f.submit "Upload Image", class: "btn btn-md button-teal" %></h4>
+            <% end %>
+          <% end %>
+          <br>
+        </div>
+        <div class="col-sm-8 col-sm-offset-1">
+          <h3>About:</h3>
+          <p>(hard-coded filler for now...) I'm always up for a good dark beer, whether it's homebrew or commercial. <% if current_user == @user %><%= link_to "Add/Edit", edit_profile_path(@profile) %><% end %></p>
+          <h3>Favorite Beers:</h3>
+          <p> Stouts, porters, anything dark and interesting! <% if current_user == @user %><%= link_to "Add/Edit", edit_profile_path(@profile) %><% end %></p>
+          <h3>Homebrewer? </h3>
+          <p>No, but I live with one. <% if current_user == @user %><%= link_to "Add/Edit", edit_profile_path(@profile) %><% end %></p>
+          <h3>Kegerator?</h3>
+          <p>Of course! <% if current_user == @user %><%= link_to "Add/Edit", edit_profile_path(@profile) %><% end %></p>
+        </div>
+      </div>
+    </div>
+
+  <div class="col-sm-10 col-sm-offset-1">
+    <div class="row">
+        <h3 class="center"> <% if current_user %><% if @user.id === current_user.id %>You're <% else %> <%= @user.name %>'s <% end %><% end %> currently sharing:</h3><br>
+        <ul id="beers">
+          <% if @profile.beers.any? %>
+            <% @profile.beers.each do |beer| %>
+              <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@profile => @profile, :@user => User.find(@profile.user_id) }%>
+            <% end %>
+          <% else %>
+            <br><p class="center" id="no_beers_msg"><%= @user.name %> isn't sharing any beers right now.</p>
+          <% end %>
+        </ul>
+    </div>
+    <div class="row">
+      <% if current_user %>
+        <% if @user.id == current_user.id %>
+          <div class="col-sm-8 col-sm-offset-2">
+            <h3 class="center"><%= link_to "Share a new beer", new_profile_beer_path(@profile.id), remote: true, :class => "btn btn-lg button-teal", id: "new_beer_link" %></h3>
+          </div>
         <% end %>
       <% end %>
-      <br>
-      <h4>About:</h4>
-      <p>(hard-coded filler for now...) I'm always up for a good dark beer, whether it's homebrew or commercial.</p>
-      <h4>Favorite Beers:</h4>
-      <p> Stouts, porters, anything dark and interesting!</p>
-      <h4>Homebrewer? </h4>
-      <p>No, but I live with one.</p>
-      <h4>Kegerator?</h4>
-      <p>Of course!</p>
-    </div>
-    <div class="col-sm-6 col-sm-offset-1">
-      <ul id="beers">
-        <h3 class="center"> <%= @user.name %>'s currently sharing:</h3><br>
-        <% if @profile.beers.any? %>
-          <% @profile.beers.each do |beer| %>
-            <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@profile => @profile, :@user => User.find(@profile.user_id) }%>
-          <% end %>
-        <% else %>
-          <br><p class="center" id="no_beers_msg"><%= @user.name %> isn't sharing any beers right now.</p>
-        <% end %>
-        </ul>
-        <% if current_user %>
-          <% if @user.id == current_user.id %>
-            <div class="col-sm-11 col-sm-offset-1">
-              <%= link_to "Share a new beer", new_profile_beer_path(@profile.id), remote: true, :class => "btn btn-lg btn-block button-teal", id: "new_beer_link" %>
-            </div>
-          <% end %>
-        <% end %>
     </div>
   </div>
 </div>

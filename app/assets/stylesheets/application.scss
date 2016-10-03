@@ -164,9 +164,9 @@ body {
   margin: 0 auto;
 }
 
-.rounded {
-  height: 245px;
-  width: 245px;
+.rounded-profile {
+  height: 195px;
+  width: 195px;
   border-radius: 3%;
   overflow:hidden;
 }
@@ -176,7 +176,7 @@ body {
   margin: 20px;
 }
 
-.rounded-small {
+.rounded-post {
   max-height: 250px;
   max-width: 250px;
   border-radius: 5px;
@@ -260,7 +260,15 @@ body {
 //etc.
 
 .beer-tile {
-  background-color: #F2D379;
+  background-color: #EFC84A;
+}
+
+.profile {
+  background-color: #d8d8d8;
+}
+
+.bottom {
+  margin-bottom: 50px;
 }
 
 .middle {
