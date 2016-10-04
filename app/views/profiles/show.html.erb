@@ -1,4 +1,4 @@
-<div class="container bottom">
+<div class="container">
     <div class="col-sm-12 push-down">
       <div class="row">
         <div class="col-sm-3">
@@ -8,7 +8,7 @@
           <% end %>
         </div>
       </div>
-      <div class="row well profile push-down-lite">
+      <div class="row well gray-back push-down-lite">
         <div class="col-sm-3 push-down-lite">
           <div class="rounded-profile">
             <%= image_tag(@user.profile.avatar.url(:medium), class: "profile_avatar") %>
@@ -54,7 +54,7 @@
       <% if current_user %>
         <% if @user.id == current_user.id %>
           <div class="col-sm-8 col-sm-offset-2">
-            <h3 class="center"><%= link_to "Share a new beer", new_user_beer_path(@user), remote: true, :class => "btn btn-lg button-teal", id: "new_beer_link" %></h3>
+            <%= link_to "Share a new beer", new_user_beer_path(@user), remote: true, :class => "btn btn-lg btn-block button-teal", id: "new_beer_link" %>
           </div>
         <% end %>
       <% end %>

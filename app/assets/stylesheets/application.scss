@@ -224,6 +224,10 @@ body {
   color: #000;
 }
 
+#new_beer_link {
+  font-size: 1.5em;
+}
+
 .button-teal {
   background-color: #67989A;
   color: #fff;
@@ -268,30 +272,20 @@ body {
 
 .white-back {
   background-color: #ffffff;
+  margin-right: 5px;
+}
+
+.gray-back {
+  background-color: #d8d8d8;
 }
 
 //etc.
-
-.beer-tile {
-  background-color: #EFC84A;
-}
-
-.profile {
-  background-color: #d8d8d8;
-}
 
 .middle {
   padding: none;
   margin: none;
   height: 375px;
   background-color: #f1f1f1;
-}
-
-.middle-gray {
-  padding: none;
-  margin: none;
-  height: 375px;
-  background-color: #d8d8d8;
 }
 
 .process {
