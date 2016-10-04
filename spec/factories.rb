@@ -36,7 +36,7 @@ FactoryGirl.define do
 
   factory(:beer) do
     style
-    profile
+    user
     name('Outrageous Oatmeal Stout')
     description('This turned out really well! Creamy and not-too-sweet.')
     abv(7.5)

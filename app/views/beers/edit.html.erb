@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container push-down">
   <%= render 'layouts/errors', :object => @beer %>
 
   <h1 class="center">Edit <%= @beer.name %></h1>
 
   <div class="col-xs-12">
-    <%= form_for [@profile, @beer] do |f| %>
+    <%= form_for [@user, @beer] do |f| %>
 
     <div class="form-group">
       <%= f.label :name %>
@@ -40,7 +40,7 @@
       <%= f.text_area :description,  size: "50x4", :class => "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.hidden_field :profile_id, :value => @profile.id %>
+      <%= f.hidden_field :user_id, :value => @user.id %>
     </div>
     <%= f.submit 'Submit', :class => "btn btn-lg button-teal"%>
     <% end %><br><br>

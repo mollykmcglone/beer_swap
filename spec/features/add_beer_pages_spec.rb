@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "the add a beer process", js: true, vcr: true do
   it "allows a user to post a new beer for sharing" do
-    profile = FactoryGirl.create(:profile)
+    user = FactoryGirl.create(:user)
     style = FactoryGirl.create(:style)
     visit posts_path
     click_on "Login"

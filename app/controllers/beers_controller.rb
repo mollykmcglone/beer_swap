@@ -23,30 +23,28 @@ class BeersController < ApplicationController
     if @beer.save
       flash[:notice] = "Beer successfully posted!"
       respond_to do |format|
-        format.html {redirect_to profile_path(@user.profile_id)}
+        format.html {redirect_to profile_path(@user)}
         format.js
       end
     else
       flash[:alert] = "Oops, something went wrong!"
-      redirect_to profile_path(@user.profile_id)
+      redirect_to profile_path(@user)
     end
   end
 
   def edit
-    @profile = Profile.find(params[:profile_id])
-    @user = User.find(@profile.user_id)
-    @beer = Beer.find(params[:id])
+    @user = User.find(params[:user_id])
+    @beer = @user.beers.find(params[:id])
     @styles = Style.all
   end
 
   def update
-    @profile = Profile.find(params[:profile_id])
-    @user = User.find(@profile.user_id)
+    @user = User.find(params[:user_id])
     @beer = @user.beers.find(params[:id])
     @styles = Style.all
     if @beer.update(beer_params)
       flash[:notice] = "Beer successfully updated!"
-      redirect_to profile_path(@user.profile_id)
+      redirect_to profile_path(@user)
     else
       flash[:alert] = "Oops, something went wrong!"
       render :edit
@@ -54,9 +52,10 @@ class BeersController < ApplicationController
   end
 
   def destroy
-    @beer = Beer.find(params[:id])
+    @user = User.find(params[:user_id])
+    @beer = @user.beers.find(params[:id])
     @beer.destroy
-    redirect_to profile_path(@user.profile_id)
+    redirect_to profile_path(@user)
   end
 
 private
@@ -65,7 +64,7 @@ private
   end
 
   def require_permission
-    if current_user != Profile.find(params[:profile_id]).user
+    if current_user != User.find(params[:user_id])
       flash[:alert] = "Whoops! Only the beer's author can edit or delete a beer."
       redirect_to profile_path(Profile.find(params[:profile_id]))
     end
