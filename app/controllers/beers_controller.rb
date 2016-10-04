@@ -3,7 +3,9 @@ class BeersController < ApplicationController
   before_action :require_permission, only: [ :edit, :destroy ]
 
   def index
-    @beers = Beer.all
+    @beers = Beer.where(nil)
+    @recent_beers = Beer.first(3)
+    @styled_beers = Beer.style_id(params[:style_id]) if params[:style_id].present?
     @hash = Gmaps4rails.build_markers(@beers) do |beer, marker|
       marker.lat beer.user.profile.latitude
       marker.lng beer.user.profile.longitude
@@ -68,5 +70,9 @@ private
       flash[:alert] = "Whoops! Only the beer's author can edit or delete a beer."
       redirect_to profile_path(Profile.find(params[:profile_id]))
     end
+  end
+
+  def filtering_params(params)
+    params.slice(:style_id)
   end
 end

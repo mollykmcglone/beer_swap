@@ -26,6 +26,14 @@ ul {
   text-align: center;
 }
 
+.indent {
+  padding-left: 25px;
+}
+
+.edge {
+  margin-right: 10px;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -229,6 +237,10 @@ body {
 
 #new_beer_link {
   font-size: 1.5em;
+}
+
+.button-text {
+  font-size: 2em;
 }
 
 .button-teal {
