@@ -653,6 +653,8 @@
         0,
         0,
         0,
+        0,
+        0,
         null,
         null,
         null,
@@ -714,6 +716,10 @@
         0,
         0,
         null,
+        null,
+        null,
+        1,
+        0,
         null,
         null
       ],
@@ -913,7 +919,8 @@
         1,
         1,
         1,
-        null,
+        27,
+        1,
         null
       ],
       "/Users/Guest/Desktop/beer_swap/app/models/category.rb": [
@@ -1333,6 +1340,6 @@
         null
       ]
     },
-    "timestamp": 1475610289
+    "timestamp": 1475624251
   }
 }

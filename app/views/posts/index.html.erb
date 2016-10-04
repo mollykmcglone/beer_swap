@@ -1,11 +1,11 @@
 <div class="top top-news">
-  <div class="welcome-small">
+  <div class="welcome">
     <h1 class="center">Swap News</h1>
   </div>
 </div>
 
-<div class="container push-down">
-  <div class="col-sm-12">
+<div class="container">
+  <div class="col-sm-12 push-down">
     <ul>
       <% @posts.each do |post| %>
         <li>
@@ -23,7 +23,7 @@
   </div>
   <% if current_user %>
     <% if current_user.admin %>
-    <div class="col-sm-4 col-sm-offset-4">
+    <div class="col-sm-4 col-sm-offset-4 bottom">
       <h3><%= link_to "Create New Post", new_post_path, :class => "btn btn-lg btn-block button-tan" %></h3><br><br>
     </div>
     <% end %>

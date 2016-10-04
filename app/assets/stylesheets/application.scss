@@ -38,6 +38,14 @@ ul {
   font-weight: bold;
 }
 
+.italic {
+  font-style: italic;
+}
+
+.smaller {
+  font-size: .75em;
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -45,7 +53,6 @@ html {
 
 body {
   padding-top: 50px;
-  padding-bottom: 50px;
   margin-bottom: 160px;
   background-color: #f1f1f1;
 }
@@ -315,4 +322,8 @@ body {
   width: auto;
   display: block;
   margin: 0 auto;
+}
+
+.bottom {
+  padding-bottom: 75px;
 }

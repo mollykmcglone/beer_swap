@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row push-down">
     <div class="col-sm-10 col-sm-offset-1">
       <h1><%= @post.title %></h1>
       <h4>By <%= @post.user.name %>, <%= time_ago_in_words(@post.created_at) %> ago in <%= @post.category.name %> (<%= @post.comments.length %> comments)</h4><br>
@@ -32,17 +32,16 @@
     </div>
   <% end %>
   </div>
-  <div class="row">
+  <div class="row bottom">
     <div class="col-sm-8 col-sm-offset-1">
       <%= link_to 'Add a Comment', new_post_comment_path(@post), remote: true, :class => "btn btn-lg button-teal", id: "new_comment_link" %><hr>
       <% if current_user %>
         <% if current_user.admin %>
         <%= link_to 'Edit Post', edit_post_path(@post) %><br>
-        <%= link_to 'Delete Post', post_path(@post), :data => {:confirm => "Are you sure?", :method => "delete"} %><br>
+        <%= link_to 'Delete Post', post_path(@post), :data => {:confirm => "Are you sure?", :method => "delete"} %>
         <% end %>
       <% end %>
-
-      <br><br><%= link_to "Return to blog", posts_path %>
+      <br><%= link_to "Return to blog", posts_path %>
     </div>
   </div>
 </div>

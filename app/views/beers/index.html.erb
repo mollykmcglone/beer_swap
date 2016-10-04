@@ -6,7 +6,7 @@
         <% @recent_beers.each do |beer| %>
           <li>
             <div class="row push-down-lite well edge">
-              <h4><span class="bold teal"><%= beer.name %></span></h4>
+              <h4><span class="bold teal"><%= beer.name %></span><span class="italic smaller"> shared by <%= link_to beer.user.name, profile_path(beer.user) %></span></h4>
               <p>"<%= beer.description %>"</p>
               <%= beer.style.name %> from <% if beer.homebrew %>
               Homebrew!
@@ -53,14 +53,14 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-10 col-sm-offset-1">
+    <div class="col-sm-6 push-down bottom">
       <% if @styled_beers.present? %>
-        <h3 class="indent">Results:</h3>
+        <h4 class="indent">Search Results:</h4>
         <ul>
           <% @styled_beers.each do |beer| %>
             <li>
               <div class="row push-down-lite well edge">
-                <h4><span class="bold teal"><%= beer.name %></span></h4>
+                <h4><span class="bold teal"><%= beer.name %></span><span class="italic smaller"> shared by <%= link_to beer.user.name, profile_path(beer.user) %></span></h4>
                 <p>"<%= beer.description %>"</p>
                 <%= beer.style.name %> from <% if beer.homebrew %>
                 Homebrew!
@@ -73,7 +73,7 @@
         </ul>
       <% else %>
         <% if params[:style_id] %>
-        <br><p>Uh-oh, nobody's sharing any beers of that style right now.</p>
+        <br><p class="indent">Uh-oh, nobody's sharing any beers of that style right now.</p>
         <% end %>
       <% end %>
     </div>
