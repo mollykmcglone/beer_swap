@@ -48,7 +48,13 @@ body {
   padding: none;
 }
 
-@media (max-width: 800px){
+@media (max-width: 995px) {
+  .map-col {
+    display: none;
+  }
+}
+
+@media (max-width: 850px){
   .post-image {
     display:none;
   }
@@ -63,9 +69,6 @@ body {
     display: none;
   }
   .process {
-    display: none;
-  }
-  .map-col {
     display: none;
   }
 }
@@ -213,7 +216,7 @@ body {
 }
 
 #map {
-  width: 430px;
+  width: 400px;
   height: 380px;
   display: block;
   margin: 0 auto;
