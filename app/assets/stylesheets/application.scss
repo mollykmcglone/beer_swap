@@ -64,10 +64,17 @@ body {
   .process {
     display: none;
   }
+  .map-col {
+    display: none;
+  }
 }
 
 .push-down {
   margin-top: 50px;
+}
+
+.push-down-lite {
+  margin-top: 25px;
 }
 
 .push-way-down {
@@ -205,10 +212,11 @@ body {
 }
 
 #map {
-  width: 500px;
-  height: 400px;
+  width: 430px;
+  height: 380px;
+  display: block;
+  margin: 0 auto;
 }
-
 
 // buttons and text colors
 .join-button {
@@ -265,10 +273,6 @@ body {
 
 .profile {
   background-color: #d8d8d8;
-}
-
-.bottom {
-  margin-bottom: 50px;
 }
 
 .middle {

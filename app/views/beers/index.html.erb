@@ -1,38 +1,40 @@
 <div class="container">
-  <div class="col-sm-5 push-down">
-    <ul>
-      <h2>Recent postings:</h2>
-      <% @beers.each do |beer| %>
-        <li>
-          <div class="row well beer-tile">
-            <h4><span class="bold blue"><%= beer.name %></span></h4>
-            <p>"<%= beer.description %>"</p>
-            <%= beer.style.name %> from <% if beer.homebrew %>
-            Homebrew!
-            <% else %>
-            <%=beer.brewery_name %>
-            <% end %></p>
-          </div>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-
-  <div class="col-sm-6 col-sm-offset-1 push-down">
-    <h2>Free beer is all around you!</h2>
-
-    <div><br>
-      <div id="map"></div>
+  <div class="row">
+    <div class="col-sm-6 push-down">
+      <ul>
+        <h2>Most recent postings:</h2>
+        <% @beers.each do |beer| %>
+          <li>
+            <div class="row well push-down-lite">
+              <h4><span class="bold teal"><%= beer.name %></span></h4>
+              <p>"<%= beer.description %>"</p>
+              <%= beer.style.name %> from <% if beer.homebrew %>
+              Homebrew!
+              <% else %>
+              <%=beer.brewery_name %>
+              <% end %></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
     </div>
 
-    <script type="text/javascript">
-      handler = Gmaps.build('Google');
-      handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-        markers = handler.addMarkers(<%= raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-        handler.getMap().setZoom(11);
-      });
-    </script>
+    <div class="col-sm-6 push-down map-col">
+      <h2>Free beer is all around you!</h2>
+        <div class="push-down-lite well">
+          <div id="map"></div>
+          <p class="push-down-lite">Note: Your privacy is important to us- we won't share your address.</p>
+        </div>
+
+      <script type="text/javascript">
+        handler = Gmaps.build('Google');
+        handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+          markers = handler.addMarkers(<%= raw @hash.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          handler.getMap().setZoom(11);
+        });
+      </script>
+    </div>
   </div>
 </div>

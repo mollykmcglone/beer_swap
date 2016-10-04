@@ -1,5 +1,5 @@
 <div class="container bottom">
-    <div class="col-sm-12 well push-down">
+    <div class="col-sm-12 push-down">
       <div class="row">
         <div class="col-sm-3">
           <h1><%= @user.name %></h1>
@@ -8,8 +8,8 @@
           <% end %>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-3 push-down">
+      <div class="row well profile push-down-lite">
+        <div class="col-sm-3 push-down-lite">
           <div class="rounded-profile">
             <%= image_tag(@user.profile.avatar.url(:medium), class: "profile_avatar") %>
           </div>
