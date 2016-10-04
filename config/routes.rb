@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :profiles do
+  resources :profiles
+
+  resources :users do
     resources :beers
   end
 

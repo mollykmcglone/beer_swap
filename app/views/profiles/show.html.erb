@@ -16,7 +16,7 @@
           <% if current_user == @user %>
             <%= form_for (@profile) do |f| %>
             <div class="form-group">
-              <h4>Update your profile photo</h4>
+              <h4>Update photo</h4>
               <%= f.file_field :avatar %>
             </div>
             <h4><%= f.submit "Upload Image", class: "btn btn-md button-teal" %></h4>
@@ -41,9 +41,9 @@
     <div class="row">
         <h3 class="center"> <% if current_user %><% if @user.id === current_user.id %>You're <% else %> <%= @user.name %>'s <% end %><% end %> currently sharing:</h3><br>
         <ul id="beers">
-          <% if @profile.beers.any? %>
-            <% @profile.beers.each do |beer| %>
-              <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@profile => @profile, :@user => User.find(@profile.user_id) }%>
+          <% if @user.beers.any? %>
+            <% @user.beers.each do |beer| %>
+              <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@user => @user }%>
             <% end %>
           <% else %>
             <br><p class="center" id="no_beers_msg"><%= @user.name %> isn't sharing any beers right now.</p>
@@ -54,7 +54,7 @@
       <% if current_user %>
         <% if @user.id == current_user.id %>
           <div class="col-sm-8 col-sm-offset-2">
-            <h3 class="center"><%= link_to "Share a new beer", new_profile_beer_path(@profile.id), remote: true, :class => "btn btn-lg button-teal", id: "new_beer_link" %></h3>
+            <h3 class="center"><%= link_to "Share a new beer", new_user_beer_path(@user), remote: true, :class => "btn btn-lg button-teal", id: "new_beer_link" %></h3>
           </div>
         <% end %>
       <% end %>

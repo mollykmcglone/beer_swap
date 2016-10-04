@@ -47,13 +47,13 @@ styles.each do |name|
 end
 
 beers = [
-  ["Vanilla Porter", "22 oz. bottles", "Really smooth and tasty porter that I made with real vanilla beans.", 6.50, "2016-09-05", true, "", Profile.first, Style.first],
+  ["Vanilla Porter", "22 oz. bottles", "Really smooth and tasty porter that I made with real vanilla beans.", 6.50, "2016-09-05", true, "", User.first, Style.first],
 
-  ["Oatmeal Stout", "growler", "This is a very nice, creamy oatmeal stout.", 7.30, "2016-09-10", true, "", Profile.second, Style.first],
+  ["Oatmeal Stout", "growler", "This is a very nice, creamy oatmeal stout.", 7.30, "2016-09-10", true, "", User.second, Style.first],
 
-  ["Awesome IPA", "12 oz. bottles", "What a delicious summer beer!", 6.44, "2016-08-12", false, "Green Dragon", Profile.last, Style.second]
+  ["Awesome IPA", "12 oz. bottles", "What a delicious summer beer!", 6.44, "2016-08-12", false, "Green Dragon", User.third, Style.second]
 ]
 
-beers.each do |name, container_type, description, abv, brew_date, homebrew, brewery_name, profile, style|
-  Beer.create( name: name, container_type: container_type, description: description, abv: abv, brew_date: brew_date, homebrew: homebrew, brewery_name: brewery_name, profile: profile, style: style )
+beers.each do |name, container_type, description, abv, brew_date, homebrew, brewery_name, user, style|
+  Beer.create( name: name, container_type: container_type, description: description, abv: abv, brew_date: brew_date, homebrew: homebrew, brewery_name: brewery_name, user: user, style: style )
 end

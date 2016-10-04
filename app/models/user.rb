@@ -3,6 +3,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile, :update_only => true
   has_many :comments
   has_many :posts
+  has_many :beers, dependent: :destroy
   after_create :create_profile
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

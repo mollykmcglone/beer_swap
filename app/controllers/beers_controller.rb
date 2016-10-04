@@ -5,47 +5,48 @@ class BeersController < ApplicationController
   def index
     @beers = Beer.all
     @hash = Gmaps4rails.build_markers(@beers) do |beer, marker|
-      marker.lat beer.profile.latitude
-      marker.lng beer.profile.longitude
+      marker.lat beer.user.profile.latitude
+      marker.lng beer.user.profile.longitude
     end
   end
 
   def new
-    @profile = Profile.find(params[:profile_id])
-    @beer = @profile.beers.new
+    @user = User.find(params[:user_id])
+    @beer = @user.beers.new
     @styles = Style.all
   end
 
   def create
-    @profile = Profile.find(params[:profile_id])
-    @beer = @profile.beers.new(beer_params)
-    @user = User.find(@profile.user_id)
+    @user = User.find(params[:user_id])
+    @beer = @user.beers.new(beer_params)
     @styles = Style.all
     if @beer.save
       flash[:notice] = "Beer successfully posted!"
       respond_to do |format|
-        format.html {redirect_to profile_path(@beer.profile_id)}
+        format.html {redirect_to profile_path(@user.profile_id)}
         format.js
       end
     else
       flash[:alert] = "Oops, something went wrong!"
-      redirect_to profile_path(@beer.profile_id)
+      redirect_to profile_path(@user.profile_id)
     end
   end
 
   def edit
     @profile = Profile.find(params[:profile_id])
+    @user = User.find(@profile.user_id)
     @beer = Beer.find(params[:id])
     @styles = Style.all
   end
 
   def update
     @profile = Profile.find(params[:profile_id])
-    @beer = @profile.beers.find(params[:id])
+    @user = User.find(@profile.user_id)
+    @beer = @user.beers.find(params[:id])
     @styles = Style.all
     if @beer.update(beer_params)
       flash[:notice] = "Beer successfully updated!"
-      redirect_to profile_path(@beer.profile_id)
+      redirect_to profile_path(@user.profile_id)
     else
       flash[:alert] = "Oops, something went wrong!"
       render :edit
@@ -55,12 +56,12 @@ class BeersController < ApplicationController
   def destroy
     @beer = Beer.find(params[:id])
     @beer.destroy
-    redirect_to profile_path(@beer.profile_id)
+    redirect_to profile_path(@user.profile_id)
   end
 
 private
   def beer_params
-    params.require(:beer).permit(:name, :description, :abv, :container_type, :brew_date, :homebrew, :brewery_name, :profile_id, :style_id)
+    params.require(:beer).permit(:name, :description, :abv, :container_type, :brew_date, :homebrew, :brewery_name, :user_id, :style_id)
   end
 
   def require_permission

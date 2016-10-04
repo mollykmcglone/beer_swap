@@ -1,6 +1,6 @@
 <div class="col-xs-12">
-  <%= form_for [@profile, @beer], html: {id: :new_beer_form}, remote: true do |f| %>
-  
+  <%= form_for [@user, @beer], html: {id: :new_beer_form}, remote: true do |f| %>
+
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, :class => "form-control" %>
@@ -35,7 +35,7 @@
     <%= f.text_area :description,  size: "50x4", :class => "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.hidden_field :profile_id, :value => @profile.id %>
+    <%= f.hidden_field :user_id, :value => @user.id %>
   </div>
   <%= f.submit 'Submit', :class => "btn btn-lg button-teal"%>
   <% end %><br><br>
