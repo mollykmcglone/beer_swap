@@ -39,14 +39,14 @@
 
   <div class="col-sm-10 col-sm-offset-1 bottom">
     <div class="row">
-        <h3 class="center"> <% if current_user %><% if @user.id === current_user.id %>You're <% else %> <%= @user.name %>'s <% end %><% end %> currently sharing:</h3><br>
+        <h3 class="center"> Beers <% if current_user %><% if @user.id === current_user.id %>you're <% else %> <%= @user.name %> is <% end %><% end %> sharing:</h3><br>
         <ul id="beers">
           <% if @user.beers.any? %>
             <% @user.beers.each do |beer| %>
               <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@user => @user }%>
             <% end %>
           <% else %>
-            <br><p class="center" id="no_beers_msg"><%= @user.name %> isn't sharing any beers right now.</p>
+            <br><p class="center" id="no_beers_msg"><% if current_user %><% if @user.id === current_user.id %>You're not<% else %> <%= @user.name %> isn't <% end %><% end %> sharing any beers right now.</p><br>
           <% end %>
         </ul>
     </div>
@@ -54,7 +54,7 @@
       <% if current_user %>
         <% if @user.id == current_user.id %>
           <div class="col-sm-8 col-sm-offset-2">
-            <%= link_to "Share a new beer", new_user_beer_path(@user), remote: true, :class => "btn btn-lg btn-block button-tan", id: "new_beer_link" %>
+            <%= link_to "Post a new beer", new_user_beer_path(@user), remote: true, :class => "btn btn-lg btn-block button-tan", id: "new_beer_link" %>
           </div>
         <% end %>
       <% end %>

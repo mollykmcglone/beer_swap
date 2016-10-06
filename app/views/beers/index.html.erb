@@ -5,14 +5,16 @@
       <ul>
         <% @recent_beers.each do |beer| %>
           <li>
-            <div class="row push-down-lite well edge">
-              <h4><span class="bold teal"><%= beer.name %></span><span class="italic smaller"> shared by <%= link_to beer.user.name, profile_path(beer.user) %></span></h4>
-              <p>"<%= beer.description %>"</p>
-              <%= beer.style.name %> from <% if beer.homebrew %>
-              Homebrew!
-              <% else %>
-              <%=beer.brewery_name %>
-              <% end %></p>
+            <div class="row push-down-lite well edge white-back">
+              <div class="col-sm-8">
+                <h4><span class="bold teal"><%= beer.name %></span><span class="italic smaller"> shared by <%= link_to beer.user.name, profile_path(beer.user) %></span></h4>
+                <p>"<%= beer.description %>"</p>
+                <%= beer.style.name %> from <% if beer.homebrew %>
+                Homebrew! <% else %><%=beer.brewery_name %><% end %></p>
+              </div>
+              <div class="col-sm-4">
+                <h4><%= link_to "Request", new_conversation_path, class: "btn btn-sm button-tan" %></h4>
+              </div>
             </div>
           </li>
         <% end %>
@@ -21,7 +23,7 @@
 
     <div class="col-sm-6 push-down map-col">
       <h3>Free beer is all around you!</h3>
-        <div class="push-down-lite mapping well">
+        <div class="push-down-lite mapping well white-back">
           <div id="map"></div>
           <p class="push-down-lite center">Your privacy is important- we won't share your address.</p>
         </div>
@@ -59,7 +61,7 @@
         <ul>
           <% @styled_beers.each do |beer| %>
             <li>
-              <div class="row push-down-lite well edge">
+              <div class="row push-down-lite well edge white-back">
                 <h4><span class="bold teal"><%= beer.name %></span><span class="italic smaller"> shared by <%= link_to beer.user.name, profile_path(beer.user) %></span></h4>
                 <p>"<%= beer.description %>"</p>
                 <%= beer.style.name %> from <% if beer.homebrew %>
