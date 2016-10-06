@@ -7,6 +7,12 @@
           <%= render 'mailbox/folders' %>
         </div>
       </div>
+      <% if conversation.is_trashed?(current_user) %>
+          <%= link_to 'Untrash', untrash_conversation_path(conversation), class: 'btn btn-info', method: :post %>
+      <% else %>
+          <h4><%= link_to 'Move conversation to trash', trash_conversation_path(conversation), class: 'btn btn-lg button-tan', method: :post,
+                      data: {confirm: 'Are you sure?'} %></h4>
+      <% end %>
     </div>
 
     <div class="col-md-8">
@@ -20,22 +26,11 @@
             <div class="form-group">
               <%= f.text_area :body, placeholder: "Add to the conversation!", rows: 4, class: "form-control" %>
             </div>
-            <h4><%= f.submit "Send", class: 'btn btn-lg button-tan pull-right' %></h4>
+            <h4><%= f.submit "Send", class: 'btn btn-lg button-teal pull-left' %></h4>
         <% end %>
         <div class="clearfix"></div>
       </div>
       </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6 col-md-offset-4">
-      <% if conversation.is_trashed?(current_user) %>
-          <%= link_to 'Untrash', untrash_conversation_path(conversation), class: 'btn btn-info', method: :post %>
-      <% else %>
-          <h4><%= link_to 'Move conversation to trash', trash_conversation_path(conversation), class: 'btn btn-lg button-teal', method: :post,
-                      data: {confirm: 'Are you sure?'} %></h4>
-      <% end %>
     </div>
   </div>
 </div>
