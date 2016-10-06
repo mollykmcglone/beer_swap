@@ -4,7 +4,7 @@ class BeersController < ApplicationController
 
   def index
     @beers = Beer.where(nil)
-    @recent_beers = Beer.first(3)
+    @recent_beers = Beer.first(4)
     @styled_beers = Beer.style_id(params[:style_id]) if params[:style_id].present?
     @hash = Gmaps4rails.build_markers(@beers) do |beer, marker|
       marker.lat beer.user.profile.latitude

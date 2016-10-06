@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005202449) do
+ActiveRecord::Schema.define(version: 20161006163739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -123,6 +123,10 @@ ActiveRecord::Schema.define(version: 20161005202449) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "full_address"
+    t.text     "about"
+    t.string   "favorites"
+    t.string   "kegerator"
+    t.string   "homebrewer"
   end
 
   create_table "styles", force: :cascade do |t|
