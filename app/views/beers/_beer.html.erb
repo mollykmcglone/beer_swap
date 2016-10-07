@@ -1,5 +1,5 @@
 <li>
-  <div class="row well white-back">
+  <div class="row well white-back beer-tile">
     <h4><span class="bold teal"><%= @beer.name %></span><span class="smaller"> shared by <%= link_to @beer.user.name, profile_path(@beer.user), class: "italic" %></span></h4>
     <p>"<%= @beer.description %>"</p>
     <p><%= @beer.style.name %> from <% if @beer.homebrew %>
@@ -13,7 +13,7 @@
         <%= link_to 'Edit', edit_user_beer_path(@user, @beer)%><br>
         <%= link_to 'Delete', user_beer_path(@user, @beer), :data => {:confirm => "Are you sure?", :method => "delete"}, remote: true %><br>
       <% else %>
-        <h4><%= link_to "Swap!", new_conversation_path, class: "btn btn-sm button-tan" %></h4>
+        <h4><%= link_to "Swap!", new_beer_conversation_path(@beer), class: "btn btn-sm button-tan" %></h4>
       <% end %>
     <% end %>
   </div>

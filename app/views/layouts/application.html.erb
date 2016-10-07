@@ -43,20 +43,17 @@
         </div><!-- /.navbar-collapse -->
       </div>
     </nav>
-      <div class="flash">
-        <div class="container">
-          <% if flash[:notice] %>
-            <div class="alert alert-info push-down flashing">
-              <%= flash[:notice] %>
-            </div>
-          <% end %>
-          <% if flash[:alert] %>
-            <div class="alert alert-danger push-down">
-              <%= flash[:alert] %>
-            </div>
-            <% end %>
+      <!-- <div class="flash"> -->
+
+    <div class="container flashing">
+      <% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %> push-down">
+          <%= value %>
         </div>
-      </div>
+      <% end %>
+    </div>
+
+      <!-- </div> -->
 
         <%= yield %>
 

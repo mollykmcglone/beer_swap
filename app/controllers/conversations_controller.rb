@@ -2,6 +2,7 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    @beer = Beer.find(params[:beer_id])
   end
 
   def create
@@ -11,9 +12,10 @@ class ConversationsController < ApplicationController
   end
 
   def show
-   @receipts = conversation.receipts_for(current_user).order(created_at: :asc)
-   # mark conversation as read
-   conversation.mark_as_read(current_user)
+    @beer = Beer.find_by(:name => conversation.subject)
+    @receipts = conversation.receipts_for(current_user).order(created_at: :asc)
+    # mark conversation as read
+    conversation.mark_as_read(current_user)
   end
 
   def reply

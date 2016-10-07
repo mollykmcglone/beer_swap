@@ -54,17 +54,7 @@ html {
 body {
   padding-top: 50px;
   margin-bottom: 160px;
-  background-color: #f1f1f1;
-}
-
-.flash {
   background-color: inherit;
-  margin: none;
-  padding: none;
-}
-
-.flashing {
-  margin-bottom: -50px;
 }
 
 @media (max-width: 995px) {
@@ -246,10 +236,6 @@ body {
   color: #000;
 }
 
-#new_beer_link {
-  font-size: 1.5em;
-}
-
 .button-text {
   font-size: 2em;
 }
@@ -323,7 +309,7 @@ body {
   padding: none;
   width: auto;
   margin: none;
-  background-color: #EFC84A;
+  background-color: #f1f1f1;
 }
 
 .process-image {
@@ -335,4 +321,8 @@ body {
 
 .bottom {
   padding-bottom: 75px;
+}
+
+.beer-tile {
+  min-height: 240px;
 }

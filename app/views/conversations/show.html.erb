@@ -1,18 +1,15 @@
 <div class="container">
-
-  <div class="row push-down">
+  <h4 class="center italic push-down"> ~ This is a private conversation between you and <%= @beer.user.name %> ~</h4>
+  <div class="row push-down-lite">
     <div class="col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <%= render 'mailbox/folders' %>
-        </div>
-      </div>
+      <%= render :partial => '/beers/small_beer', locals: {:@beer => @beer, :@user => current_user } %>
       <% if conversation.is_trashed?(current_user) %>
-          <%= link_to 'Untrash', untrash_conversation_path(conversation), class: 'btn btn-info', method: :post %>
+        <h4 class="indent"><%= link_to 'Un-archive', untrash_conversation_path(conversation), class: 'btn btn-lg btn-block button-tan', method: :post %></h4>
       <% else %>
-          <h4><%= link_to 'Move conversation to trash', trash_conversation_path(conversation), class: 'btn btn-lg button-tan', method: :post,
+        <h4 class="indent"><%= link_to 'Archive conversation', trash_conversation_path(conversation), class: 'btn btn-lg btn-block button-tan', method: :post,
                       data: {confirm: 'Are you sure?'} %></h4>
       <% end %>
+        <h4 class="indent"><%= link_to 'Back to Inbox', mailbox_inbox_path, class: 'btn btn-lg btn-block button-teal' %></h4>
     </div>
 
     <div class="col-md-8">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161006163739) do
+ActiveRecord::Schema.define(version: 20161006181114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,8 +114,8 @@ ActiveRecord::Schema.define(version: 20161006163739) do
     t.string   "city"
     t.string   "state"
     t.integer  "zipcode"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -123,10 +123,10 @@ ActiveRecord::Schema.define(version: 20161006163739) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "full_address"
-    t.text     "about"
-    t.string   "favorites"
-    t.string   "kegerator"
-    t.string   "homebrewer"
+    t.text     "about",               default: "---"
+    t.string   "favorites",           default: "---"
+    t.string   "kegerator",           default: "---"
+    t.string   "homebrewer",          default: "---"
   end
 
   create_table "styles", force: :cascade do |t|

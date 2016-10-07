@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     resources :beers
   end
 
-  resources :beers
+  resources :beers do
+    resources :conversations
+  end
 
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
   get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
