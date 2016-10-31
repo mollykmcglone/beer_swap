@@ -3,18 +3,20 @@
     <h4><span class="bold teal"><%= @beer.name %></span><span class="smaller"> shared by <%= link_to @beer.user.name, profile_path(@beer.user), class: "italic" %></span></h4>
     <p>"<%= @beer.description %>"</p>
     <p><%= @beer.style.name %> from <% if @beer.homebrew %>
-    Homebrew!
+    Homebrew
     <% else %>
     <%=@beer.brewery_name %></p>
     <% end %>
     <p>Brewed on: <%= @beer.brew_date %></p>
     <% if current_user %>
-      <% if @beer.user_id == @user.id %>
+      <% if @beer.user_id == current_user.id %>
         <%= link_to 'Edit', edit_user_beer_path(@user, @beer)%><br>
         <%= link_to 'Delete', user_beer_path(@user, @beer), :data => {:confirm => "Are you sure?", :method => "delete"}, remote: true %><br>
       <% else %>
-        <h4><%= link_to "Swap!", new_beer_conversation_path(@beer), class: "btn btn-sm button-tan" %></h4>
+        <h4><%= link_to "Swap!", new_beer_conversation_path(@beer), class: "btn btn-md button-tan" %></h4>
       <% end %>
+    <% else %>
+      <%= link_to 'Sign Up', new_user_path %> or <%= link_to 'Log In', new_user_session_path %> to swap for this beer!
     <% end %>
   </div>
 </li>

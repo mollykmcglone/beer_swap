@@ -1,63 +1,65 @@
-<div class="col-sm-8 col-sm-offset-2 push-down">
-  <h1 class="center"> Update your Profile:</h1><br>
+<div class="container bottom">
+  <div class="col-sm-10 col-sm-offset-1 push-down">
+    <h1 class="center"> Update your Profile:</h1><br>
 
-  <%= form_for (@profile) do |f| %>
+    <%= form_for (@profile) do |f| %>
 
-  <h3 class="teal"> About You </h3>
-  <div class="row">
-    <div class="form-group col-sm-8">
-      <%= f.label "Tell your neighbors about yourself!" %>
-      <%= f.text_area :about, class: "form-control" %>
+    <h3 class="teal"> About You </h3>
+    <div class="row">
+      <div class="form-group col-sm-12">
+        <%= f.label "Tell your neighbors about yourself!" %>
+        <%= f.text_area :about, class: "form-control" %>
+      </div>
+
+      <div class="form-group col-sm-12">
+        <%= f.label "What are your favorite beers and/or styles?"%>
+        <%= f.text_field :favorites, class: "form-control" %>
+      </div>
+
+      <div class="form-group col-sm-6">
+        <% kegerator_options = ([['Of course!', 'Of course!'], ['Maybe someday', 'Maybe someday'], ['That sounds like a bad idea...', 'That sounds like a bad idea...'], ['Nope', 'Nope']]) %>
+        <%= f.label "Do you have a kegerator?" %>
+        <%= f.select(:kegerator, options_for_select(kegerator_options), {}, {class: "form-control"})  %>
+      </div>
+
+      <div class="form-group col-sm-6">
+        <% homebrewer_options = ([['Long-time homebrewer', 'Long-time homebrewer'], ["I'm learning", "I'm learning"], ['Maybe someday', 'Maybe someday'], ['Not my thing', 'Not my thing'], ['No, but I live with one', 'No, but I live with one']]) %>
+        <%= f.label "Are you a homebrewer?" %>
+        <%= f.select(:homebrewer, options_for_select(homebrewer_options), {}, {class: "form-control"})  %>
+      </div>
     </div>
 
-    <div class="form-group col-sm-8">
-      <%= f.label "What are your favorite beers and/or styles?"%>
-      <%= f.text_field :favorites, class: "form-control" %>
+    <h3 class="teal"> Where you Live </h3>
+    Note: We will not share your address- we only ask for this information to show you beers near you!<br>
+    <br>
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <%= f.label :address %>
+        <%= f.text_field :address, class: "form-control" %>
+      </div>
+
+      <div class="form-group col-sm-6">
+        <%= f.label :city %>
+        <%= f.text_field :city, class: "form-control" %>
+      </div>
+
+      <div class="form-group col-sm-6">
+        <%= f.label :state %>
+        <%= f.text_field :state, class: "form-control" %>
+      </div>
+
+      <div class="form-group col-sm-6">
+        <%= f.label :zipcode %>
+        <%= f.text_field :zipcode, class: "form-control" %>
+      </div>
     </div>
 
-    <div class="form-group col-sm-8">
-      <% kegerator_options = ([['Of course!', 'Of course!'], ['Maybe someday', 'Maybe someday'], ['That sounds like a bad idea...', 'That sounds like a bad idea...'], ['Nope', 'Nope']]) %>
-      <%= f.label "Do you have a kegerator?" %>
-      <%= f.select(:kegerator, options_for_select(kegerator_options), {}, {class: "form-control"})  %>
+    <div class="form-group col-sm-6 col-sm-offset-3">
+      <h3><%= f.submit "Submit Changes", class: "btn button-teal btn-lg btn-block" %></h3>
+      <% end %>
     </div>
-
-    <div class="form-group col-sm-8">
-      <% homebrewer_options = ([['Long-time homebrewer', 'Long-time homebrewer'], ["I'm learning", "I'm learning"], ['Maybe someday', 'Maybe someday'], ['Not my thing', 'Not my thing'], ['No, but I live with one', 'No, but I live with one']]) %>
-      <%= f.label "Are you a homebrewer?" %>
-      <%= f.select(:homebrewer, options_for_select(homebrewer_options), {}, {class: "form-control"})  %>
+    <div class="col-sm-4 col-sm-offset-4">
+      <br><br><p class="center"><%= link_to "Back to profile", profile_path(current_user.id)%><p>
     </div>
-  </div>
-
-  <h3 class="teal"> Where you Live </h3>
-  Note: We will not share your address- we only ask for this information to show you beers near you!<br>
-  <br>
-  <div class="row">
-    <div class="form-group col-sm-6">
-      <%= f.label :address %>
-      <%= f.text_field :address, class: "form-control" %>
-    </div>
-
-    <div class="form-group col-sm-6">
-      <%= f.label :city %>
-      <%= f.text_field :city, class: "form-control" %>
-    </div>
-
-    <div class="form-group col-sm-6">
-      <%= f.label :state %>
-      <%= f.text_field :state, class: "form-control" %>
-    </div>
-
-    <div class="form-group col-sm-6">
-      <%= f.label :zipcode %>
-      <%= f.text_field :zipcode, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group col-sm-6 col-sm-offset-3">
-    <h3><%= f.submit "Submit Changes", class: "btn button-teal btn-lg btn-block" %></h3>
-    <% end %>
-  </div>
-  <div class="col-sm-4 col-sm-offset-4">
-    <br><br><p class="center bottom"><%= link_to "Back to profile", profile_path(current_user.id)%><p>
   </div>
 </div>

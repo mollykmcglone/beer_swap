@@ -12,42 +12,40 @@
     </div>
   </div>
 </div>
-<div class="middle">
-  <div class="welcome-small">
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        <h2 class="center blue bold">How it works...</h2>
+<div class="container bottom">
+  <div class="middle">
+    <div class="welcome-small">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <h2 class="center blue bold">How it works...</h2>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-4 col-sm-offset-1">
-        <%= image_tag("keg_with_spigot.png", class: "home-icons") %>
-        <h3 class="center teal bold">Do you have extra beer?<h3>
-        <h4 class="center lead">Share with your neighbors for free or ask for something in trade.</h4><br>
-      </div>
-      <div class="col-sm-4 col-sm-offset-2">
-        <%= image_tag("growler.png", class: "home-icons") %>
-        <h3 class="center teal bold">Looking for something new?<h3>
-        <h4 class="center lead">Find beer to try and make connections with fellow beer-lovers.</h4>
+      <div class="row push-down-lite">
+        <div class="col-sm-4 col-sm-offset-1">
+          <%= image_tag("keg_with_spigot.png", class: "home-icons") %>
+          <h3 class="center teal bold">Do you have extra beer?</h3>
+          <h4 class="center lead">Share for free or ask for something in trade.</h4><br>
+        </div>
+        <div class="col-sm-4 col-sm-offset-2">
+          <%= image_tag("growler.png", class: "home-icons") %>
+          <h3 class="center teal bold">Want something new?</h3>
+          <h4 class="center lead">Find beer and connect with fellow beer-lovers.</h4>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="process">
-  <div class="welcome-small">
-    <div class="row">
-      <div class="col-sm-12">
-        <%= image_tag("swap_process.png", class: "process-image") %>
-      <div>
+  <div class="process">
+    <div class="welcome-small row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <%= image_tag("swap_process.png", class: "img-responsive img-center") %>
+      </div>
     </div>
   </div>
-</div>
-<div class="middle">
-  <div class="welcome">
-    <div class="row">
+  <div class="middle">
+    <div class="welcome col-sm-10 col-sm-offset-1">
       <div class="col-sm-4 col-sm-offset-4">
-        <h2 class="center">See it in Action</h2><br>
-        <h2><%= link_to "Find Beer", beers_path, class: "btn btn-lg btn-block button-teal" %></h2>
+        <h2 class="center">See it in Action!</h2><br>
+        <h2><%= link_to "Find Beer", beers_path, class: "btn btn-lg btn-block button-tan" %></h2>
       </div>
     </div>
   </div>
