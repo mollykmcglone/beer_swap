@@ -1,6 +1,6 @@
-<div class="container push-down bottom">
-  <div class="col-sm-8 col-sm-offset-2">
-    <h1 class="center">Edit your Account:</h1>
+<div class="container push-way-down bottom">
+  <div class="col-sm-6 col-sm-offset-3 well">
+    <h2 class="center">Edit your Account:</h2>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= devise_error_messages! %>
@@ -33,21 +33,21 @@
           <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
         </div>
 
-        <h3>Confirm changes</h3>
+        <h3 class="indent push-down-lite">Confirm changes</h3>
         <div class="form-group col-sm-12">
           <%= f.label :current_password %> <i>(needed to confirm your changes)</i><br />
           <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
         </div>
 
         <div class="actions col-sm-12">
-          <h3><%= f.submit "Submit Changes", class: "btn btn-lg button-tan btn-block" %><br></h3>
+          <h3 class="center"><%= f.submit "Submit Changes", class: "btn btn-lg button-tan" %><br></h3>
         </div>
       <% end %><br>
 
     <div class="col-sm-12">
-      <h3><%= button_to "Cancel Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-lg button-teal btn-block" %></h3>
+      <h3 class="center"><%= button_to "Cancel Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-lg button-teal" %></h3>
     </div>
-    <div class="col-sm-3 col-sm-offset-5">
+    <div class="col-sm-4 col-sm-offset-4 center">
       <br><br><%= link_to "Back to Profile", :back %>
     </div>
   </div>

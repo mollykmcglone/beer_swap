@@ -26,6 +26,14 @@ ul {
   text-align: center;
 }
 
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
 .indent {
   padding-left: 25px;
 }
@@ -224,8 +232,8 @@ body {
 }
 
 #map {
-  width: 400px;
-  height: 380px;
+  width: 350px;
+  height: 300px;
   display: block;
   margin: 0 auto;
 }
@@ -270,7 +278,7 @@ body {
 }
 
 .blue {
-  color: #334D5C;
+  color: #2E4172;
 }
 
 .teal {
@@ -287,7 +295,7 @@ body {
 }
 
 .gray-back {
-  background-color: #e5e5e5;
+  background-color: #f1f1f1;
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
