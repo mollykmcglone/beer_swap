@@ -31,7 +31,6 @@
             <li class="nav-item"><%= link_to "Blog", posts_path %></li>
             <% if current_user %>
               <li><%= link_to "Inbox", mailbox_inbox_path %></li>
-              <li><%= link_to "Edit Account Info", edit_user_registration_path(current_user) %></li>
               <li><%= link_to "My Profile", profile_path(current_user.id) %></li>
               <li><%= link_to "Logout", destroy_user_session_path, :method => "delete" %></li>
               <li class="round-image-50"><%= image_tag(current_user.profile.avatar.url(:thumb)) %></li>

@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
   get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
 
+  resources :messages, only: [:new, :create]
 
   resources :conversations do
    member do

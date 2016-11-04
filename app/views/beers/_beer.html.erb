@@ -1,5 +1,5 @@
 <li>
-  <div class="row well white-back beer-tile">
+  <div class="row well margin-right beer-tile">
     <h4><span class="bold teal"><%= @beer.name %></span><span class="smaller"> shared by <%= link_to @beer.user.name, profile_path(@beer.user), class: "italic" %></span></h4>
     <p>"<%= @beer.description %>"</p>
     <p><%= @beer.style.name %> from <% if @beer.homebrew %>

@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :mailbox, :conversation
 
+  def after_sign_in_path_for(resource)
+    profile_path(current_user) #your path
+  end
+
   private
 
   def mailbox

@@ -42,6 +42,14 @@ ul {
   margin-right: 10px;
 }
 
+.margin-left {
+  margin-left: 5px;
+}
+
+.margin-right {
+  margin-right: 5px;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -65,12 +73,6 @@ body {
   background-color: inherit;
 }
 
-@media (max-width: 995px) {
-  .map-col {
-    display: none;
-  }
-}
-
 @media (max-width: 850px){
   .post-image {
     display:none;
@@ -79,9 +81,9 @@ body {
     height: 50px;
     weight: auto;
   }
-  // .process {
-  //   display: none;
-  // }
+  .map-col {
+    display:none;
+  }
 }
 
 .push-down {
@@ -291,7 +293,6 @@ body {
 
 .white-back {
   background-color: #ffffff;
-  margin-right: 5px;
 }
 
 .gray-back {

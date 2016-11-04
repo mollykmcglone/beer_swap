@@ -19,7 +19,7 @@
       </div>
       <div class="col-sm-8 col-sm-offset-1">
         <div class="col-sm-12">
-          <h4 class="blue">About <%= @user.name %>:</h4>
+          <h4 class="blue">About:</h4>
           <p><%= @profile.about %></p>
         </div>
         <div class="col-sm-12">
@@ -40,16 +40,22 @@
         </div>
         <div class="col-sm-6">
           <h4 class="blue">Shares: </h4>
-          <p><%= @user.name %> has shared <span id="shares"><%= @user.beers.count %> beers.</span></p>
+          <p>Has shared <span id="shares"><%= @user.beers.count %> beers.</span></p>
         </div>
-        <div class="col-sm-12 push-down-lite">
-          <% if current_user == @user %><%= link_to "Update Your Profile", edit_profile_path(@profile), :class => "btn btn-lg btn-block button-tan" %><% end %>
+        <% if current_user == @user %>
+        <div class="col-sm-6 push-down-lite">
+          <%= link_to "Update Your Profile", edit_profile_path(@profile), :class => "btn btn-lg btn-block button-tan" %>
+        </div>
+        <div class="col-sm-6 push-down-lite">
+          <%= link_to "Change Account Settings", edit_user_registration_path(@user), :class => "btn btn-lg btn-block button-teal" %>
+        </div>
+        <% end %>
         </div>
       </div>
     </div>
 
     <div class="row">
-      <h2 class="push-down blue"><%= @user.name %>'s currently sharing:</h2><br>
+      <h2 class="push-down blue indent">Currently sharing:</h2><br>
         <ul id="beers" class="no-indent">
           <% if @user.beers.any? %>
             <% @user.beers.each do |beer| %>
@@ -58,7 +64,7 @@
               </div>
             <% end %>
           <% else %>
-            <br><p id="no_beers_msg"><% if current_user %><% if @user.id === current_user.id %>You're not<% else %> <%= @user.name %> isn't <% end %><% end %> sharing any beers right now.</p><br>
+            <br><p id="no_beers_msg" class="indent"><% if current_user %><% if @user.id === current_user.id %>You're not<% else %> <%= @user.name %> isn't <% end %><% end %> sharing any beers right now.</p><br>
           <% end %>
         </ul>
       </div>
