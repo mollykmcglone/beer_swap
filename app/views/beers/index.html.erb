@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row push-down">
-    <div class="col-sm-5 push-down">
-      <h3 class="teal center"> Search for your favorite beer:</h3><br>
+    <div class="col-sm-4 col-sm-offset-4">
+      <h3 class="teal center"> Search for beer:</h3><br>
         <%= form_tag(beers_path, :method => "get", id: "search-form") do %>
         <div class="form-group">
           <%= label_tag "Choose a Style" %>:
@@ -9,21 +9,6 @@
           <%= submit_tag "Search", class: "btn btn-lg btn-block button-tan" %>
         </div>
         <% end %>
-    </div>
-
-    <div class="col-sm-6 col-sm-offset-1 map-col">
-      <h3 class="center teal">Swappers near you!</h3>
-      <div id="map"></div>
-
-      <script type="text/javascript">
-        handler = Gmaps.build('Google');
-        handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-          markers = handler.addMarkers(<%= raw @hash.to_json %>);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-          handler.getMap().setZoom(10);
-        });
-      </script>
     </div>
   </div>
 
