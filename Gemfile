@@ -18,7 +18,7 @@ gem 'aws-sdk', '~> 2.3'
 gem 'geocoder', '~> 1.4'
 gem 'gmaps4rails', '~> 2.1.2'
 gem 'rest-client'
-gem 'mailboxer', '~> 0.14.0' 
+gem 'mailboxer', '~> 0.14.0'
 
 group :development, :test do
   gem 'dotenv-rails', :require => 'dotenv/rails-now'
@@ -44,3 +44,4 @@ group :development do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+ruby '2.2.5'
