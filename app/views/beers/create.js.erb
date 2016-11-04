@@ -1,5 +1,5 @@
 $('#new_beer_form').remove();
 $('#new_beer_link').show();
-$('#beers').append('<%= j render @beer %>');
-$('#shares').html(<%= @user.beers.count %> + ' beers shared')
+$('#beers').append('<div class="col-sm-6"><%= j render @beer %></div>');
+$('#shares').html(<%= @user.beers.count %>)
 $('#no_beers_msg').remove();

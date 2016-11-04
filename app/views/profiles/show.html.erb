@@ -1,4 +1,4 @@
-<div class="container bottom">
+<div class="container">
   <div class="col-sm-12 push-down">
     <h1 class="blue bold"><%= @user.name %></h1>
     <div class="row well gray-back push-down-lite">
@@ -40,14 +40,14 @@
         </div>
         <div class="col-sm-6">
           <h4 class="blue">Shares: </h4>
-          <p>Has shared <span id="shares"><%= @user.beers.count %> beers.</span></p>
+          <p>Has shared <span id="shares"><%= @user.beers.count %></span> beers.</p>
         </div>
         <% if current_user == @user %>
         <div class="col-sm-6 push-down-lite">
-          <%= link_to "Update Your Profile", edit_profile_path(@profile), :class => "btn btn-lg btn-block button-tan" %>
+          <h4><%= link_to "Update Profile", edit_profile_path(@profile), :class => "btn btn-lg btn-block button-tan" %></h4>
         </div>
         <div class="col-sm-6 push-down-lite">
-          <%= link_to "Change Account Settings", edit_user_registration_path(@user), :class => "btn btn-lg btn-block button-teal" %>
+          <h4><%= link_to "Account Settings", edit_user_registration_path(@user), :class => "btn btn-lg btn-block button-teal" %></h4>
         </div>
         <% end %>
         </div>
@@ -56,7 +56,7 @@
 
     <div class="row">
       <h2 class="push-down blue indent">Currently sharing:</h2><br>
-        <ul id="beers" class="no-indent">
+        <ul id="beers">
           <% if @user.beers.any? %>
             <% @user.beers.each do |beer| %>
               <div class="col-sm-6">
@@ -69,16 +69,15 @@
         </ul>
       </div>
 
-      <div class="row push-down-lite">
-        <div class="col-sm-6 col-sm-offset-3">
-          <% if current_user %>
-            <% if @user.id == current_user.id %>
-              <div>
-                <h4 class="center"><%= link_to "Post a new beer", new_user_beer_path(@user), remote: true, :class => "btn btn-lg btn-block  button-tan", id: "new_beer_link" %></h4>
-              </div>
-            <% end %>
+    <div class="row push-down-lite bottom">
+      <div class="col-sm-6 col-sm-offset-3">
+        <% if current_user %>
+          <% if @user.id == current_user.id %>
+            <div>
+              <h4 class="center"><%= link_to "Post a new beer", new_user_beer_path(@user), remote: true, :class => "btn btn-lg btn-block  button-tan", id: "new_beer_link" %></h4>
+            </div>
           <% end %>
-        </div>
+        <% end %>
       </div>
-  </div>
+    </div>
 </div>

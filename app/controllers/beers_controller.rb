@@ -23,7 +23,6 @@ class BeersController < ApplicationController
     @beer = @user.beers.new(beer_params)
     @styles = Style.all
     if @beer.save
-      flash[:notice] = "Beer successfully posted!"
       respond_to do |format|
         format.html {redirect_to profile_path(@user)}
         format.js

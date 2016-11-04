@@ -8,10 +8,11 @@
           <%= select_tag :style_id, options_from_collection_for_select(Style.all, :id, :name, params[:style_id]), include_blank: true, class: "form-control" %><br>
           <%= submit_tag "Search", class: "btn btn-lg btn-block button-tan" %>
         </div>
+        <% end %>
     </div>
 
     <div class="col-sm-6 col-sm-offset-1 map-col">
-      <h3 class="blue center">Swappers near you!</h3>
+      <h3 class="center teal">Swappers near you!</h3>
       <div id="map"></div>
 
       <script type="text/javascript">
@@ -25,13 +26,14 @@
       </script>
     </div>
   </div>
+
   <div class="row">
     <% if @styled_beers.present? %>
       <h3 class="blue indent">Search Results:</h3>
-        <ul class="push-down-lite">
+        <ul class="push-down-lite no-indent">
           <% @styled_beers.each do |beer| %>
             <div class="col-sm-6">
-              <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@user => current_user }%>
+            <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@user => current_user }%>
             </div>
           <% end %>
         </ul>
@@ -44,13 +46,12 @@
 
   <div class="row bottom">
     <h3 class="indent blue">Recent postings:</h3>
-    <ul class="push-down-lite">
+    <ul class="push-down-lite no-indent">
       <% @recent_beers.each do |beer| %>
-        <div class="col-sm-6 ">
+        <div class="col-sm-6">
         <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@user => current_user }%>
         </div>
       <% end %>
     </ul>
-    <% end %>
   </div>
 </div>

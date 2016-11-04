@@ -10,7 +10,7 @@ describe "the add a beer process", js: true, vcr: true do
     fill_in "Password", with: "password"
     click_on "Log in"
     click_on "My Profile"
-    click_on "Share a new beer"
+    click_on "Post a new beer"
     fill_in "Name", with: "Outrageous Oatmeal Stout"
     fill_in "beer[abv]", with: 7.5
     select('Porter/Stout', :from => 'beer[style_id]')
@@ -31,7 +31,7 @@ describe "the add a beer process", js: true, vcr: true do
     fill_in "Password", with: "password"
     click_on "Log in"
     click_on "My Profile"
-    click_on "Share a new beer"
+    click_on "Post a new beer"
     fill_in "Name", with: ""
     fill_in "beer[abv]", with: 7.5
     select('Porter/Stout', :from => 'beer[style_id]')
