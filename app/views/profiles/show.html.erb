@@ -7,7 +7,7 @@
           <%= image_tag(@user.profile.avatar.url(:medium), class: "profile_avatar") %>
         </div>
         <% if current_user == @user %>
-          <%= form_for (@profile) do |f| %>
+          <%= form_for(@profile, multipart: true) do |f| %>
           <div class="form-group">
             <h5>Update photo</h5>
             <%= f.file_field :avatar %>
