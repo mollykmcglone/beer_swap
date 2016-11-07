@@ -104,19 +104,30 @@ body {
 
 //jumbotron-style divs
 .top {
-  color: #fff;
   margin: none;
   padding: none;
 }
 
 .top-home {
+  color: #fff;
   height: 600px;
   background-color: #236467;
 }
 
 .top-news {
-  height: 250px;
-  background-color: #236467;
+  color: #fff;
+  min-height: 425px;
+  margin: 0;
+  padding: 0;
+  background: url(darkbeers.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.blog {
+  font-size: 4em;
 }
 
 .welcome {

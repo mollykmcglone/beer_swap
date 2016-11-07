@@ -1,3 +1,5 @@
-<div class="container push-down">
-  <%= render partial: 'mailbox/folder_view', locals: { is_conversation: false, messages: @inbox } %>
+<div class="container">
+  <div class="col-sm-12 push-down bottom">
+    <%= render partial: 'mailbox/folder_view', locals: { is_conversation: false, messages: @inbox } %>
+  </div>
 </div>
