@@ -16,7 +16,7 @@
     <div class="row">
       <% if @styled_beers.present? %>
         <h3 class="blue indent">Search Results:</h3>
-          <ul class="push-down-lite">
+          <ul class="push-down-lite no-indent">
             <% @styled_beers.each do |beer| %>
               <div class="col-sm-6">
               <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@user => current_user }%>
@@ -32,7 +32,7 @@
 
     <div class="row bottom">
       <h3 class="indent blue">Recent postings:</h3>
-      <ul class="push-down-lite">
+      <ul class="push-down-lite no-indent">
         <% @recent_beers.each do |beer| %>
           <div class="col-sm-6">
           <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@user => current_user }%>

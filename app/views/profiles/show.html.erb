@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col-sm-12 push-down">
     <h1 class="blue bold"><%= @user.name %></h1>
-    <div class="row well gray-back push-down-lite">
+    <div class="row well white-back push-down-lite">
       <div class="col-sm-3">
         <div class="rounded-profile push-down-lite">
           <%= image_tag(@user.profile.avatar.url(:medium), class: "profile_avatar") %>
@@ -50,13 +50,12 @@
           <h4><%= link_to "Account Settings", edit_user_registration_path(@user), :class => "btn btn-lg btn-block button-teal" %></h4>
         </div>
         <% end %>
-        </div>
       </div>
     </div>
 
-    <div class="row">
-      <h2 class="push-down blue indent">Currently sharing:</h2><br>
-        <ul id="beers">
+    <div class="row push-down">
+      <h2 class="blue indent">Currently sharing:</h2><br>
+        <ul class="no-indent" id="beers">
           <% if @user.beers.any? %>
             <% @user.beers.each do |beer| %>
               <div class="col-sm-6">
@@ -80,4 +79,5 @@
         <% end %>
       </div>
     </div>
+  </div>
 </div>

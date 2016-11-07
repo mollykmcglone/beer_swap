@@ -74,7 +74,7 @@ html {
 body {
   padding-top: 50px;
   margin-bottom: 160px;
-  background-color: inherit;
+  background-color: #f1f1f1;
 }
 
 @media (max-width: 850px){
@@ -231,7 +231,7 @@ body {
 }
 
 .home-icons {
-  height: 75px;
+  height: 125px;
   width: auto;
   display: block;
   margin: 0 auto;
@@ -313,14 +313,13 @@ body {
 .middle {
   padding: none;
   margin: none;
-  background-color: #fff;
 }
 
 .process {
   padding: none;
   width: auto;
   margin: none;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .img-center {
