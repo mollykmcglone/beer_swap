@@ -1,42 +1,44 @@
 <div class="container">
-  <div class="row push-down">
-    <div class="col-sm-4 col-sm-offset-4">
-      <h3 class="teal center"> Search for beer:</h3><br>
-        <%= form_tag(beers_path, :method => "get", id: "search-form") do %>
-        <div class="form-group">
-          <%= label_tag "Choose a Style" %>:
-          <%= select_tag :style_id, options_from_collection_for_select(Style.all, :id, :name, params[:style_id]), include_blank: true, class: "form-control" %><br>
-          <%= submit_tag "Search", class: "btn btn-lg btn-block button-tan" %>
-        </div>
-        <% end %>
-    </div>
-  </div>
-
-  <div class="row">
-    <% if @styled_beers.present? %>
-      <h3 class="blue indent">Search Results:</h3>
-        <ul class="push-down-lite no-indent">
-          <% @styled_beers.each do |beer| %>
-            <div class="col-sm-6">
-            <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@user => current_user }%>
-            </div>
+  <div class="col-sm-12 push-down">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <h3 class="teal center"> Search for beer:</h3><br>
+          <%= form_tag(beers_path, :method => "get", id: "search-form") do %>
+          <div class="form-group">
+            <%= label_tag "Choose a Style" %>:
+            <%= select_tag :style_id, options_from_collection_for_select(Style.all, :id, :name, params[:style_id]), include_blank: true, class: "form-control" %><br>
+            <%= submit_tag "Search", class: "btn btn-lg btn-block button-tan" %>
+          </div>
           <% end %>
-        </ul>
-    <% else %>
-      <% if params[:style_id] %>
-      <h4 class="indent">Sorry, nobody's sharing any beers of that style right now.</h4>
-      <% end %>
-    <% end %>
-  </div>
+      </div>
+    </div>
 
-  <div class="row bottom">
-    <h3 class="indent blue">Recent postings:</h3>
-    <ul class="push-down-lite no-indent">
-      <% @recent_beers.each do |beer| %>
-        <div class="col-sm-6">
-        <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@user => current_user }%>
-        </div>
+    <div class="row">
+      <% if @styled_beers.present? %>
+        <h3 class="blue indent">Search Results:</h3>
+          <ul class="push-down-lite">
+            <% @styled_beers.each do |beer| %>
+              <div class="col-sm-6">
+              <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@user => current_user }%>
+              </div>
+            <% end %>
+          </ul>
+      <% else %>
+        <% if params[:style_id] %>
+        <h4 class="indent">Sorry, nobody's sharing any beers of that style right now.</h4>
+        <% end %>
       <% end %>
-    </ul>
+    </div>
+
+    <div class="row bottom">
+      <h3 class="indent blue">Recent postings:</h3>
+      <ul class="push-down-lite">
+        <% @recent_beers.each do |beer| %>
+          <div class="col-sm-6">
+          <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@user => current_user }%>
+          </div>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>

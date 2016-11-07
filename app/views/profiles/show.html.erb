@@ -74,7 +74,7 @@
         <% if current_user %>
           <% if @user.id == current_user.id %>
             <div>
-              <h4 class="center"><%= link_to "Post a new beer", new_user_beer_path(@user), remote: true, :class => "btn btn-lg btn-block  button-tan", id: "new_beer_link" %></h4>
+              <h4><%= link_to "Post a new beer", new_user_beer_path(@user), remote: true, :class => "btn btn-lg btn-block button-tan", id: "new_beer_link" %></h4>
             </div>
           <% end %>
         <% end %>
