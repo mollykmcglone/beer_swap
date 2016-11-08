@@ -134,8 +134,12 @@ body {
   padding-top: 75px;
 }
 
-.welcome-small {
+.padding-top {
   padding-top: 50px;
+}
+
+.padding-bottom {
+  padding-bottom: 50px;
 }
 
 .last {
@@ -329,7 +333,7 @@ body {
 .process {
   padding: none;
   width: auto;
-  margin: none;
+  margin: -20px;
   background-color: transparent;
 }
 
