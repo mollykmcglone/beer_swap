@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require gmaps/google
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets

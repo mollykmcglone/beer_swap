@@ -6,6 +6,22 @@ class BeersController < ApplicationController
     @beers = Beer.where(nil)
     @recent_beers = Beer.first(4)
     @styled_beers = Beer.style_id(params[:style_id]) if params[:style_id].present?
+    @near_beers = []
+    @near_profiles = []
+    @near_profiles = Profile.where("neighborhood = ?", params[:neighborhood]) if params[:neighborhood].present?
+    if @near_profiles.any?
+      @near_profiles.each do |profile|
+        if profile.user.beers.any?
+          profile.user.beers.each do |beer|
+          @near_beers << beer
+          end
+        end
+      end
+    end
+    @hash = Gmaps4rails.build_markers(@beers) do |beer, marker|
+      marker.lat beer.user.profile.latitude
+      marker.lng beer.user.profile.longitude
+    end
   end
 
   def new
@@ -69,5 +85,6 @@ private
 
   def filtering_params(params)
     params.slice(:style_id)
+    params.slice(:neighborhood)
   end
 end

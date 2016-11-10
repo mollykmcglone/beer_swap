@@ -1,23 +1,53 @@
 <div class="container">
   <div class="col-sm-12 push-down">
+
     <div class="row">
-      <div class="col-sm-4 col-sm-offset-4">
-        <h3 class="teal center"> Search for beer:</h3><br>
+      <div class="col-sm-6 align">
+        <h3 class="teal">Search for Beer:</h3>
           <%= form_tag(beers_path, :method => "get", id: "search-form") do %>
-          <div class="form-group">
-            <%= label_tag "Choose a Style" %>:
-            <%= select_tag :style_id, options_from_collection_for_select(Style.all, :id, :name, params[:style_id]), include_blank: true, class: "form-control" %><br>
-            <%= submit_tag "Search", class: "btn btn-lg btn-block button-tan" %>
+          <div class="form-group push-down-lite form-inline">
+            <h5><%= label_tag "Find by Style" %>:</h5>
+            <%= select_tag :style_id, options_from_collection_for_select(Style.all, :id, :name, params[:style_id]), include_blank: true, class: "form-control", :style => "width:200px" %>
+            <%= submit_tag "Search", class: "btn btn-md button-tan" %>
+          </div>
+          <div class="form-group form-inline">
+            <h5><%= label_tag "Find by Neighborhood" %>:</h5>
+            <% options = ([['SE Portland', 'SE Portland'], ['N/NE Portland', 'N/NE Portland'], ['SW Portland', 'SW Portland'], ['NW Portland', 'NW Portland']]) %>
+            <%= select_tag :neighborhood, options_for_select(options), include_blank: true, class: "form-control", :style => "width:200px" %>
+            <%= submit_tag "Search", class: "btn btn-md button-tan" %>
           </div>
           <% end %>
       </div>
-    </div>
+      <div class="col-sm-6 map-col">
+       <h3 class="blue">Beer is all around you!</h3>
+       <div id="map"></div>
+
+      <script type="text/javascript">
+        handler = Gmaps.build('Google');
+        handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+          markers = handler.addMarkers(<%= raw @hash.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          handler.getMap().setZoom(10);
+        });
+       </script>
+     </div>
+   </div>
 
     <div class="row">
       <% if @styled_beers.present? %>
-        <h3 class="blue indent">Search Results:</h3>
+        <h3 class="blue">Search Results:</h3>
           <ul class="push-down-lite no-indent">
             <% @styled_beers.each do |beer| %>
+              <div class="col-sm-6">
+              <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@user => current_user }%>
+              </div>
+            <% end %>
+          </ul>
+      <% elsif @near_beers.present? %>
+        <h3 class="blue">Search Results:</h3>
+          <ul class="push-down-lite no-indent">
+            <% @near_beers.each do |beer| %>
               <div class="col-sm-6">
               <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@user => current_user }%>
               </div>
@@ -30,8 +60,8 @@
       <% end %>
     </div>
 
-    <div class="row bottom">
-      <h3 class="indent blue">Recent postings:</h3>
+    <div class="row push-down-lite">
+      <h3 class="blue">Recent postings:</h3>
       <ul class="push-down-lite no-indent">
         <% @recent_beers.each do |beer| %>
           <div class="col-sm-6">
@@ -40,5 +70,20 @@
         <% end %>
       </ul>
     </div>
+
+    <div class="row push-down-lite bottom">
+      <div class="col-sm-6 col-sm-offset-3">
+        <% if current_user %>
+          <div>
+            <h4><%= link_to "Post a beer to share", new_user_beer_path(current_user), remote: true, :class => "btn btn-lg btn-block button-tan", id: "new_beer_link" %></h4>
+          </div>
+        <% else %>
+          <div>
+            <h4><%= link_to "Sign-up to share beer", new_user_registration_path, :class => "btn btn-lg btn-block button-tan" %></h4>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 </div>

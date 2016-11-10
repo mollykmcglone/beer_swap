@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161006181114) do
+ActiveRecord::Schema.define(version: 20161110032456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(version: 20161006181114) do
     t.string   "favorites",           default: "---"
     t.string   "kegerator",           default: "---"
     t.string   "homebrewer",          default: "---"
+    t.string   "neighborhood"
   end
 
   create_table "styles", force: :cascade do |t|

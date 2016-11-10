@@ -1,5 +1,5 @@
 <li>
-  <div class="well col-sm-8 col-sm-offset-1">
+  <div class="well white-back col-sm-8 col-sm-offset-1">
     <h5><span class="bold"><%= link_to @user.name, profile_path(@comment.user_id) %></span> says:</h5>
     <h5>"<%= @comment.content %>"</h5>
     <%= time_tag @comment.created_at %><br>

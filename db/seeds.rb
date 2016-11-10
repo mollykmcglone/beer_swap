@@ -13,11 +13,11 @@ users.each do |name, email, password, admin|
 end
 
 
-User.first.update( profile_attributes: { address: "3936 SE Sherman Street", city: "Portland", state: "Oregon", zipcode: 97214 })
+User.first.update( profile_attributes: { address: "3936 SE Sherman Street", city: "Portland", state: "Oregon", zipcode: 97214, neighborhood: "SE Portland" })
 
-User.second.update( profile_attributes: { address: "3181 SW Sam Jackson Park Rd", city: "Portland", state: "Oregon", zipcode: 97217 })
+User.second.update( profile_attributes: { address: "3181 SW Sam Jackson Park Rd", city: "Portland", state: "Oregon", zipcode: 97217, neighborhood: "SW Portland" })
 
-User.last.update( profile_attributes: { address: "1004 N Killingsworth St", city: "Portland", state: "Oregon", zipcode: 97217 })
+User.last.update( profile_attributes: { address: "1004 N Killingsworth St", city: "Portland", state: "Oregon", zipcode: 97217, neighborhood: "N/NE Portland" })
 
 
 categories = [

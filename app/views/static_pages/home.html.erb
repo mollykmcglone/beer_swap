@@ -1,19 +1,19 @@
 <div class="top top-home">
-  <div class="welcome">
+  <div class="padding-top">
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1">
         <%= image_tag("beer.png", class: "beer-image") %>
         <h1 class="center">Connecting people and beer</h1>
-        <h4 class="center lead">Share what you have, find what you want!</h4><br>
+        <h4 class="center lead">Share what you have, find what you want</h4><br>
         <div class="col-sm-4 col-sm-offset-4">
-          <h2><%= link_to "Join the swap", new_user_registration_path, class: "btn btn-lg btn-block button-tan join-button" %></h2>
+          <h2><%= link_to "Join the swap!", new_user_registration_path, class: "btn btn-lg btn-block button-tan join-button" %></h2>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="container bottom">
-  <div class="middle welcome">
+<div>
+  <div class="middle padding-top">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3">
         <h2 class="center blue bold">How it works...</h2>
@@ -32,18 +32,53 @@
       </div>
     </div>
   </div>
-  <div class="process welcome">
-    <div class="row">
-      <div class="col-sm-12">
-        <%= image_tag("swap_process.png", class: "img-responsive img-center") %>
+  <div class="process padding-top row">
+    <div class="col-sm-12">
+      <%= image_tag("swap_process.png", class: "img-responsive img-center") %>
+    </div>
+  </div>
+  <div class="middle padding-top row">
+    <div class="push-down-lite col-sm-10 col-sm-offset-1">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <h2 class="center blue">Our Guiding Values</h2>
+        </div>
+      </div>
+      <div class="row push-down bottom-edge">
+        <div class="col-sm-5 col-sm-offset-1 right-edge">
+          <div class="push-down">
+            <%= image_tag("handshake.png", class: "home-icons2") %>
+          </div>
+          <h4 class="center lead">Build Community</h4><br>
+        </div>
+        <div class="col-sm-5">
+          <div class="push-down">
+            <%= image_tag("recycle.png", class: "home-icons2") %>
+          </div>
+          <h4 class="center lead">Reduce waste</h4><br>
+        </div>
+      </div>
+      <div class="row padding-bottom">
+        <div class="col-sm-5 col-sm-offset-1 right-edge">
+          <div class="push-down">
+            <%= image_tag("hops.png", class: "home-icons2") %>
+          </div>
+          <h4 class="center lead">Share skills and experience</h4><br>
+        </div>
+        <div class="col-sm-5">
+          <div class="push-down">
+            <%= image_tag("gift.png", class: "home-icons2") %>
+          </div>
+          <h4 class="center lead">Grow the gifting economy</h4><br>
+        </div>
       </div>
     </div>
   </div>
-  <div class="middle">
-    <div class="welcome col-sm-10 col-sm-offset-1">
+  <div class="top stripe row bottom">
+    <div class="col-sm-10 col-sm-offset-1 padding-top">
       <div class="col-sm-4 col-sm-offset-4">
-        <h2 class="center">See it in Action!</h2><br>
-        <h2><%= link_to "Find Beer", beers_path, class: "btn btn-lg btn-block button-tan" %></h2>
+        <h2 class="center blue">See it in Action</h2><br>
+        <h2><%= link_to "Find Beer!", beers_path, class: "btn btn-lg btn-block button-tan" %></h2>
       </div>
     </div>
   </div>
