@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="col-sm-12 push-down">
+  <div class="col-sm-10 col-sm-offset-1 push-down">
 
     <div class="row">
       <div class="col-sm-6 align">
@@ -10,7 +10,8 @@
             <%= select_tag :style_id, options_from_collection_for_select(Style.all, :id, :name, params[:style_id]), include_blank: true, class: "form-control", :style => "width:200px" %>
             <%= submit_tag "Search", class: "btn btn-md button-tan" %>
           </div>
-          <div class="form-group form-inline">
+          <h5 class="teal">~ OR ~</h5>
+          <div class="form-group form-inline push-down-lite">
             <h5><%= label_tag "Find by Neighborhood" %>:</h5>
             <% options = ([['SE Portland', 'SE Portland'], ['N/NE Portland', 'N/NE Portland'], ['SW Portland', 'SW Portland'], ['NW Portland', 'NW Portland']]) %>
             <%= select_tag :neighborhood, options_for_select(options), include_blank: true, class: "form-control", :style => "width:200px" %>
@@ -21,6 +22,7 @@
       <div class="col-sm-6 map-col">
        <h3 class="blue">Beer is all around you!</h3>
        <div id="map"></div>
+       <p class="push-down-lite small">* Privacy is important-we don't share addresses.</p>
 
       <script type="text/javascript">
         handler = Gmaps.build('Google');
@@ -36,8 +38,8 @@
 
     <div class="row">
       <% if @styled_beers.present? %>
-        <h3 class="blue">Search Results:</h3>
-          <ul class="push-down-lite no-indent">
+        <h3 class="teal">Search Results:</h3>
+          <ul class="no-indent">
             <% @styled_beers.each do |beer| %>
               <div class="col-sm-6">
               <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@user => current_user }%>
@@ -45,8 +47,8 @@
             <% end %>
           </ul>
       <% elsif @near_beers.present? %>
-        <h3 class="blue">Search Results:</h3>
-          <ul class="push-down-lite no-indent">
+        <h3 class="teal">Search Results:</h3>
+          <ul class="no-indent">
             <% @near_beers.each do |beer| %>
               <div class="col-sm-6">
               <%= render :partial => '/beers/beer', locals: {:@beer => beer, :@user => current_user }%>
@@ -55,12 +57,12 @@
           </ul>
       <% else %>
         <% if params[:style_id] %>
-        <h4 class="indent">Sorry, nobody's sharing any beers of that style right now.</h4>
+        <h4 class="indent">Sorry, nobody's sharing beers like that right now.</h4>
         <% end %>
       <% end %>
     </div>
 
-    <div class="row push-down-lite">
+    <div class="row">
       <h3 class="blue">Recent postings:</h3>
       <ul class="push-down-lite no-indent">
         <% @recent_beers.each do |beer| %>

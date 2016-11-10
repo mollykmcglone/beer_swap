@@ -1,5 +1,4 @@
-<div class="col-xs-8">
-  <%= form_for @post do |f| %>
+<%= form_for @post do |f| %>
   <div class="form-group">
     <%= f.label :title %>:
     <%= f.text_field :title, :class => "form-control" %>
@@ -17,7 +16,7 @@
   </div><br>
   <div class="form-group">
     <%= f.label :content %>:
-    <%= f.text_area :content,  size: "50x6", :class => "form-control" %>
+    <%= f.text_area :content,  size: "50x10", :class => "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :image %>
@@ -26,6 +25,7 @@
   <div class="form-group">
     <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
-  <%= f.submit 'Submit', :class => "btn btn-primary"%>
-  <% end %>
-</div>
+  <div class="bottom">
+    <%= f.submit 'Submit', :class => "btn btn-lg button-teal"%>
+  </div>
+<% end %>

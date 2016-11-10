@@ -1,7 +1,9 @@
-<div class="container">
-  <%= render 'layouts/errors', :object => @post %>
+<div class="container bottom">
+  <div class="col-sm-10 col-sm-offset-1 well white-back shadow push-down">
+    <%= render 'layouts/errors', :object => @post %>
 
-  <h1> Publish a new blog post: </h1>
+    <h1 class="center"> Publish a blog post: </h1>
 
-  <%= render 'form' %>
+    <%= render 'form' %>
+  </div>
 </div>

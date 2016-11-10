@@ -40,7 +40,7 @@ posts.each do |title, content, category_id|
   Post.create( title: title, user: User.first, content: content, category_id: category_id )
 end
 
-styles = ["Porter/Stout", "IPA", "Pale Ale", "Sour", "Hefeweizen", "Lager", "Amber"]
+styles = ["Porter/Stout", "IPA", "Pale Ale", "Sour", "Hefeweizen", "Lager", "Amber", "Other"]
 
 styles.each do |name|
   Style.create( name: name )

@@ -2,6 +2,7 @@
   <div class="col-sm-10 col-sm-offset-1 push-down">
     <div class="row well push-down-lite white-back">
       <h2 class="blue bold indent"><%= @user.name %></h2>
+      <p class="indent"><%= @user.profile.neighborhood %></p>
       <div class="col-sm-4 indent">
         <div class="rounded-profile push-down-lite">
           <%= image_tag(@user.profile.avatar.url(:medium), class: "profile_avatar") %>
