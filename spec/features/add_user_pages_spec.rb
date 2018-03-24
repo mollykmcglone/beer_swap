@@ -10,7 +10,7 @@ describe "the add a user process" do
     fill_in "Password confirmation", with: "password"
     click_on "Submit"
     expect(page).to have_content 'Welcome! You have signed up successfully.'
-    click_on "My Profile"
+    click_on "Profile"
     expect(page).to have_content "Person"
   end
 end

@@ -8,7 +8,7 @@ describe "the edit a profile process", vcr: true do
     fill_in "Email", with: "Person@gmail.com"
     fill_in "Password", with: "password"
     click_on "Log in"
-    click_on 'My Profile'
+    click_on 'Profile'
     click_on 'Account Settings'
     fill_in 'Name', :with => 'Person McPerson'
     fill_in 'Current password', :with => 'password'

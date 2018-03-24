@@ -9,7 +9,7 @@ describe "the add a beer process", js: true, vcr: true do
     fill_in "Email", with: "Person@gmail.com"
     fill_in "Password", with: "password"
     click_on "Log in"
-    click_on "My Profile"
+    click_on "Profile"
     click_on "Post a new beer"
     fill_in "Name", with: "Outrageous Oatmeal Stout"
     fill_in "beer[abv]", with: 7.5
@@ -30,7 +30,7 @@ describe "the add a beer process", js: true, vcr: true do
     fill_in "Email", with: "Person@gmail.com"
     fill_in "Password", with: "password"
     click_on "Log in"
-    click_on "My Profile"
+    click_on "Profile"
     click_on "Post a new beer"
     fill_in "Name", with: ""
     fill_in "beer[abv]", with: 7.5
