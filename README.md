@@ -28,10 +28,14 @@ Project Objectives:
 ## Installation
 
 * `gem install rails`
+* `gem install bundler`
+* `brew install postgresql`
 * `git clone https://github.com/mollykmcglone/beer_swap.git`
 * `cd beer_swap`
 * `bundle install`
-* `postgres`
+* `brew install imagemagick`
+* `brew install phantomjs`
+* `brew services start postgresql`
 * `rake db:setup`
 * `rake db:test:prepare`
 
